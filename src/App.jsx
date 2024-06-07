@@ -9,6 +9,7 @@ import RecentUpdates from "./ui/sections/RecentUpdates";
 function App() {
   return (
     <div className="page-wrapper">
+      <div>hi</div>
       <Navbar />
       <Hero />
       <LatestNews />
