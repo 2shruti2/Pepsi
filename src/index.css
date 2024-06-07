@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  body{
+    @apply bg-black text-slate-100 font-inter tracking-wide;
+  }
+}
+
+@layer components{
+  /* keep section padding in all section components */
+  .section-padding{
+    @apply px-10 py-7 sm:px-20 sm:py-16; 
+  }
+  .page-wrapper {
+    @apply container mx-auto;
+  }
+}
