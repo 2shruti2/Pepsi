@@ -1,3 +1,4 @@
+import Footer from "./ui/components/Footer";
 import Navbar from "./ui/components/Navbar";
 import BestMissions from "./ui/sections/BestMissions";
 import Hero from "./ui/sections/Hero";
@@ -18,6 +19,7 @@ function App() {
       <Portals />
       <RecentUpdates />
       <Locations />
+      <Footer/>
     </div>
   );
 }
