@@ -13,12 +13,6 @@ function App() {
     <div className="page-wrapper">
       <Navbar />
       <Hero />
-      <BestMissions/>
-      <LatestNews />
-      <Highlights />
-      <Portals />
-      <RecentUpdates />
-      <Locations />
       <Footer/>
     </div>
   );
