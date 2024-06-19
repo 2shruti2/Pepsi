@@ -8,6 +8,8 @@ export default {
     extend: {
       colors:{
         black: "#000",
+        primary : "#FF1400",
+        secondary : "#0E0E96"
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
