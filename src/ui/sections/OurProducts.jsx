@@ -1,34 +1,32 @@
-import { useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Product from '../components/our-products/Product';
 
-gsap.registerPlugin(ScrollTrigger);
+import Product from '../components/our-products/Product';
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const OurProducts = () => {
 
-  useEffect(() => {
-    gsap.to(".product-section", {
-      scrollTrigger: {
-        trigger: ".product-section",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true,
-        pin: true,
-        markers: true,
-        snap: {
-          snapTo: 1 / (document.querySelectorAll('.product-section').length - 1), // snap to the closest section
-          duration: { min: 0.2, max: 0.5 }, // set the snap duration
-          delay: 1, // wait 0.2 seconds before snapping
-          ease: "power1.inOut", // the snap easing
-        }
+  useGSAP(() => {
+
+    gsap.fromTo(
+      ".product",
+      {
+        opacity: 0,
+        y: 10,
+      },
+      {
+        ease: "power1.inOut",
+        opacity: 1,
+        y: 0,
+        delay: 1,
+        stagger: 1,
       }
-    });
-  }, []);
+    );
+  });
+
 
   return (
-    <section className="section-padding">
-      <div id="section1" className="product-section">
+    <section className="section-padding md:scroll-container">
+      <div className="md:scroll-section product" >
         <Product
           imgSrc1={"assets/products/pepsi.png"}
           name1="pepsi"
@@ -39,7 +37,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div id="section2" className="product-section">
+      <div className="scroll-section product">
         <Product
           imgSrc1={"assets/products/nitro-pepsi-vanilla.png"}
           name1="pepsi-vanilla"
@@ -48,7 +46,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div id="section3" className="product-section">
+      <div className="scroll-section product">
         <Product
           imgSrc1={"assets/products/pepsi-mango.png"}
           name1="pepsi-mango"
@@ -57,7 +55,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div id="section4" className="product-section">
+      <div className="scroll-section product">
         <Product
           imgSrc1={"assets/products/pepsi-wild-cherry.png"}
           name1="pepsi-wild-cherry"
@@ -68,19 +66,19 @@ const OurProducts = () => {
         />
       </div>
 
-      <div id="section5" className="product-section">
+      <div className="scroll-section product">
         <Product
           imgSrc1={"assets/products/pepsi-caffeine-free.png"}
-          name1="pepsi"
+          name1="pepsi-caffeine-free"
           imgSrc2={"assets/products/pepsi-diet-caffeine-free.png"}
-          name2="pepsi"
+          name2="pepsi-diet-caffeine-free"
         />
       </div>
 
-      <div id="section6" className="product-section">
+      <div className="scroll-section product">
         <Product
           imgSrc1={"assets/products/pepsi-real-sugar.png"}
-          name1="pepsi"
+          name1="pepsi-real-sugar"
         />
       </div>
     </section>

@@ -1,21 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-  body{
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
     @apply bg-black text-slate-100 font-inter tracking-wide;
+  }
+
+  /* Customizes the whole scrollbar */
+  .scroll-container::-webkit-scrollbar {
+    width: 7px; /* Width of the scrollbar */
+  }
+
+  /* Customizes the track of the scrollbar */
+  .scroll-container::-webkit-scrollbar-track {
+    background: none; /* Color of the track */
+  }
+
+  /* Customizes the thumb of the scrollbar */
+  .scroll-container::-webkit-scrollbar-thumb {
+    background: #0E0E96; /* Color of the thumb */
+    border-radius: 10px;
+  }
+
+  /* Changes the thumb color on hover */
+  .scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker color on hover */
+    border-radius: 10px;
   }
 }
 
-@layer components{
+@layer components {
   /* keep section padding in all section components */
-  .section-padding{
-    @apply px-10 py-7 sm:px-20 sm:py-16; 
+  .section-padding {
+    @apply px-10 py-7 sm:px-20 sm:py-16;
   }
   .page-wrapper {
     @apply container mx-auto;
+  }
+
+  /* Custom styles for scroll snapping */
+  .scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+  .scroll-section {
+    height: 100vh;
+    scroll-snap-align: start;
   }
 }
