@@ -9,7 +9,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-black text-slate-100 font-inter tracking-wide;
+    @apply bg-gray-950 text-slate-100 font-inter tracking-wide;
   }
 
   /* Customizes the whole scrollbar */
