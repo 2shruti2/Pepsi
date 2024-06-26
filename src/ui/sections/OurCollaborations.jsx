@@ -210,6 +210,8 @@ useGSAP(() => {
   y:30,
   })
 
+    
+
   gsap.from(playRef.current,{
     x:40,
     opacity:0,
@@ -244,7 +246,7 @@ useGSAP(() => {
         <h3 className='font-semibold'>Get Wild With Pepsi Wild Cherry.</h3>
         </div>
 
-          <div className='box1 h-[68vh] bg-primary w-[105vh] border rounded-3xl relative'>
+          <div className='box1 h-[68vh] bg-gray-900 w-[105vh] border rounded-3xl relative'>
         <button className='px-5 py-5 border rounded-full bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center align-cemter font-normal'><PlayIcon ref={playRef} className='text-black size-10 pl-1'/></button>   
                
         </div>
@@ -256,19 +258,19 @@ useGSAP(() => {
         <h3 className='font-semibold scale-0'>Get Wild With Pepsi Wild Cherry.</h3>
         </div>
 
-        <div className='box2 h-[68vh] bg-primary w-[30vh] border rounded-3xl'>
-
+        <div className='box2 h-[68vh] bg-gray-900 w-[30vh] border rounded-3xl'>
+        
         </div>
         </div>
 
         <div ref={box3Ref} className="inner-container3 flex flex-col justify-around">
 
         <div className="headings3">
-        <h1 className='font-bold mb-5'>Pepsi Collabs</h1>
-        <h3 className='font-semibold'>Get Wild With Pepsi Wild Cherry.</h3>
+        <h1 className='font-bold mb-5 scale-0'>Pepsi Collabs</h1>
+        <h3 className='font-semibold scale-0'>Get Wild With Pepsi Wild Cherry.</h3>
         </div>
 
-        <div className='box3 h-[68vh] bg-primary w-[30vh] border rounded-3xl'>
+        <div className='box3 h-[68vh] bg-gray-900 w-[30vh] border rounded-3xl'>
         
         </div>
         </div>
