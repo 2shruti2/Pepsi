@@ -26,7 +26,7 @@ const OurProducts = () => {
 
   return (
     <section className="section-padding md:scroll-container">
-      <div className="md:scroll-section product" >
+      <div className="md:scroll-section product bg-red-400" >
         <Product
           imgSrc1={"assets/products/pepsi.png"}
           name1="pepsi"
