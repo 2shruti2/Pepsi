@@ -7,6 +7,7 @@ import { useRef } from "react";
 const OurProducts = () => {
 
   const scrollRef = useRef();
+  // const customScroller = document.querySelector(".scroll-container");
 
   useGSAP(() => {
 
@@ -24,6 +25,7 @@ const OurProducts = () => {
         stagger: 1,
         scrollTrigger: {
           trigger: scrollRef.current.children,
+          // scroller: customScroller,
           start: "top 70%", // When the top of the element is at 70% of the viewport height
           toggleActions: "play none none reset", // Re-trigger the animation when it comes into view again
         },

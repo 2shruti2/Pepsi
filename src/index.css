@@ -54,4 +54,14 @@
     height: 100vh;
     scroll-snap-align: start;
   }
+
+  /* 3d section */
+  .canvas-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: absolute;
+    margin: 0;
+    padding: 0;
+  }
+  
 }
