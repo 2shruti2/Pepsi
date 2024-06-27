@@ -2,8 +2,12 @@
 import Product from '../components/our-products/Product';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 const OurProducts = () => {
+
+  const scrollRef = useRef();
+  // const customScroller = document.querySelector(".scroll-container");
 
   useGSAP(() => {
 
@@ -19,14 +23,20 @@ const OurProducts = () => {
         y: 0,
         delay: 1,
         stagger: 1,
+        scrollTrigger: {
+          trigger: scrollRef.current.children,
+          // scroller: customScroller,
+          start: "top 70%", // When the top of the element is at 70% of the viewport height
+          toggleActions: "play none none reset", // Re-trigger the animation when it comes into view again
+        },
       }
     );
   });
 
 
   return (
-    <section className="section-padding md:scroll-container">
-      <div className="md:scroll-section product bg-red-400" >
+    <section className="section-padding md:scroll-container" ref={scrollRef}>
+      <div className="md:scroll-section product" >
         <Product
           imgSrc1={"assets/products/pepsi.png"}
           name1="pepsi"
