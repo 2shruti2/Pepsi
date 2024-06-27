@@ -63,5 +63,16 @@
     margin: 0;
     padding: 0;
   }
+
+  .canvas-container > div {
+    width: 100% !important;
+    height: 100vh !important;
+  }
+
+  .canvas-container canvas {
+    width: 100% !important;
+    height: 100vh !important;
+    display: block; /* Ensure no extra space */
+  }
   
 }

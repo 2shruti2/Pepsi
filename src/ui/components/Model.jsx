@@ -3,7 +3,7 @@ import { OrbitControls, useGLTF } from '@react-three/drei';
 
 const ModelGlb = () => {
   const { scene } = useGLTF('/assets/model/pepsi_can.glb');
-  scene.scale.set(20, 20, 20);
+  scene.scale.set(5, 5, 5);
   return <primitive object={scene} width="100vw" height="100vh" />;
 };
 
@@ -13,7 +13,11 @@ const Model = () => {
       <ambientLight intensity={10}/>
       <pointLight position={[10, 10, 10]} />
       <ModelGlb  />
-      <OrbitControls />
+      <OrbitControls 
+       enableZoom={false}
+      //  ref={controlRef}
+      //  maxAzimuthAngle ={3.14}
+      />
     </Canvas>
   );
 }
