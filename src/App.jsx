@@ -1,4 +1,4 @@
-// import Footer from "./ui/components/Footer";
+import Footer from "./ui/components/Footer";
 // import Navbar from "./ui/components/Navbar";
 // import Hero from "./ui/sections/Hero";
 import OurProducts from "./ui/sections/OurProducts";
@@ -8,8 +8,8 @@ function App() {
     <div className="page-wrapper">
       {/* <Navbar />
       <Hero /> */}
-      <OurProducts/>
-      {/* <Footer/> */}
+      {/* <OurProducts/> */}
+      <Footer/>
     </div>
   );
 }
