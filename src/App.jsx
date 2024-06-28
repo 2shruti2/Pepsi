@@ -8,7 +8,7 @@ function App() {
     <div className="page-wrapper">
       {/* <Navbar /> */}
       <Hero />
-      {/* <OurProducts/> */}
+      <OurProducts/>
       {/* <Footer/> */}
     </div>
   );

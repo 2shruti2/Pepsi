@@ -74,7 +74,7 @@ useGSAP(()=>{
 
   return (
     <>
-      <div className="w-screen h-screen relative overflow-hidden">
+      <div className="w-full h-screen relative overflow-hidden">
       hero
       <div className="w-4 h-4 bg-gray-950  rounded-full circle2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 opacity-0"></div>
       <AnimatedLoadaer  imageRevel = {"assets/HeroSection/animatedLogo.png"}/>
