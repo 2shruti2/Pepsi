@@ -10,7 +10,7 @@ const Product = ({ imgSrc1, imgSrc2 = "", imgSrc3 = "", name1, name2 = "", name3
 
   useEffect(() => {
     const element = scrollRef.current;
-    // const customScroller = document.querySelector(".scroll-container");
+    const customScroller = document.querySelector(".scroll-container");
 
     if (element) {
       gsap.fromTo(
@@ -23,12 +23,12 @@ const Product = ({ imgSrc1, imgSrc2 = "", imgSrc3 = "", name1, name2 = "", name3
           ease: "power1.inOut",
           opacity: 1,
           y: 0,
-          delay: 0.3,
+          delay: 1,
           stagger: 0.1,
           scrollTrigger: {
             trigger: element,
-            // scroller: customScroller,
-            start: "top 70%", // When the top of the element is at 70% of the viewport height
+            scroller: customScroller,
+            start: "top 30%", // When the top of the element is at 70% of the viewport height
             toggleActions: "play none none reset", // Re-trigger the animation when it comes into view again
           },
         }

@@ -1,5 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
+import { useState, useEffect } from 'react';
 
 const ModelGlb = () => {
   const { scene } = useGLTF('/assets/model/pepsi_can.glb');
@@ -8,6 +9,17 @@ const ModelGlb = () => {
 };
 
 const Model = () => {
+
+  const [rotateDirection, setRotateDirection] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRotateDirection((prev) => -prev); // Toggle the direction
+    }, 3000); // Change direction every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Canvas className="canvas-container" camera={{ position: [0, 0, 5], fov: 25 }}  width="100vw" height="100vh">
       <ambientLight intensity={10}/>
@@ -15,8 +27,12 @@ const Model = () => {
       <ModelGlb  />
       <OrbitControls 
        enableZoom={false}
-      //  ref={controlRef}
-      //  maxAzimuthAngle ={3.14}
+       autoRotate
+       autoRotateSpeed={8 * rotateDirection}
+       minPolarAngle={Math.PI / 4} 
+       maxPolarAngle={Math.PI / 1.8} 
+       minAzimuthAngle={-Math.PI / 8} 
+       maxAzimuthAngle={Math.PI }
       />
     </Canvas>
   );

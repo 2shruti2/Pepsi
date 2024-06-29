@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="page-wrapper">
       {/* <Navbar /> */}
-      {/* <Hero /> */}
+      <Hero />
       <OurProducts/>
       <ModelView/>
       {/* <Footer/> */}
