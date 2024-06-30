@@ -2,8 +2,12 @@
 import Product from '../components/our-products/Product';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 const OurProducts = () => {
+
+  const scrollRef = useRef();
+  const customScroller = document.querySelector(".scroll-container");
 
   useGSAP(() => {
 
@@ -17,16 +21,22 @@ const OurProducts = () => {
         ease: "power1.inOut",
         opacity: 1,
         y: 0,
-        delay: 1,
+        delay: 0.5,
         stagger: 1,
+        scrollTrigger: {
+          trigger: scrollRef.current.children,
+          scroller: customScroller,
+          start: "top 70%", // When the top of the element is at 70% of the viewport height
+          toggleActions: "play none none reset", // Re-trigger the animation when it comes into view again
+        },
       }
     );
   });
 
 
   return (
-    <section className="section-padding md:scroll-container">
-      <div className="md:scroll-section product" >
+    <section className="section-padding md:scroll-container" ref={scrollRef}>
+      <div className="sm:scroll-section product" >
         <Product
           imgSrc1={"assets/products/pepsi.png"}
           name1="pepsi"
@@ -37,7 +47,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="scroll-section product">
+      <div className="sm:scroll-section product">
         <Product
           imgSrc1={"assets/products/nitro-pepsi-vanilla.png"}
           name1="pepsi-vanilla"
@@ -46,7 +56,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="scroll-section product">
+      <div className="sm:scroll-section product">
         <Product
           imgSrc1={"assets/products/pepsi-mango.png"}
           name1="pepsi-mango"
@@ -55,7 +65,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="scroll-section product">
+      <div className="sm:scroll-section product">
         <Product
           imgSrc1={"assets/products/pepsi-wild-cherry.png"}
           name1="pepsi-wild-cherry"
@@ -66,7 +76,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="scroll-section product">
+      <div className="sm:scroll-section product">
         <Product
           imgSrc1={"assets/products/pepsi-caffeine-free.png"}
           name1="pepsi-caffeine-free"
@@ -75,7 +85,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="scroll-section product">
+      <div className="sm:scroll-section product">
         <Product
           imgSrc1={"assets/products/pepsi-real-sugar.png"}
           name1="pepsi-real-sugar"

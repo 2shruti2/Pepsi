@@ -9,7 +9,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-black text-slate-100 font-inter tracking-wide;
+    @apply bg-gray-950 text-slate-100 font-inter tracking-wide;
   }
 
   /* Customizes the whole scrollbar */
@@ -24,7 +24,7 @@
 
   /* Customizes the thumb of the scrollbar */
   .scroll-container::-webkit-scrollbar-thumb {
-    background: #0E0E96; /* Color of the thumb */
+    background: #0e0e96; /* Color of the thumb */
     border-radius: 10px;
   }
 
@@ -32,6 +32,23 @@
   .scroll-container::-webkit-scrollbar-thumb:hover {
     background: #555; /* Darker color on hover */
     border-radius: 10px;
+  }
+
+  @keyframes moveUp {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
   }
 }
 
@@ -53,5 +70,39 @@
   .scroll-section {
     height: 100vh;
     scroll-snap-align: start;
+  }
+
+  /* 3d section */
+  .canvas-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: absolute;
+    margin: 0;
+    padding: 0;
+  }
+
+  .canvas-container > div {
+    /* width: 100% !important;
+    height: 120vh !important; */
+    width: 40vh !important;
+    height: 100vh !important;
+    /* @apply sm:!w-[100%] !w-[20vw] sm:!h-[80vh] !h-[120vh] */
+  }
+
+  .canvas-container canvas {
+    width: 100% !important;
+    height: 100vh !important;
+    display: block; /* Ensure no extra space */
+  }
+
+  /* pepsi animation component */
+
+  .drop {
+    animation: moveUp 6s forwards;
+  }
+
+  .pepsi-logo {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
   }
 }
