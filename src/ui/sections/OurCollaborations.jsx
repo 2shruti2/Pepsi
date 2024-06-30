@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { ArrowRightCircleIcon, PlayIcon } from '@heroicons/react/16/solid' 
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import video1 from '../../assets/video1.mp4'
 
 const OurCollaborations = () => {
 
@@ -36,6 +37,11 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container1 h3",{
+        scale:1,
+        duration:0.3,
+      })
+
+      gsap.to(".box1 button", {
         scale:1,
         duration:0.3,
       })
@@ -99,6 +105,11 @@ const OurCollaborations = () => {
         duration:0.3,
       })
 
+      gsap.to(".box2 button", {
+        scale:1,
+        duration:0.3,
+      })
+
       gsap.to(".box1",{
       width:"30vh",
       duration:0.3,  
@@ -154,6 +165,11 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container3 h3",{
+        scale:1,
+        duration:0.3,
+      })
+
+      gsap.to(".box3 button", {
         scale:1,
         duration:0.3,
       })
@@ -246,7 +262,8 @@ useGSAP(() => {
         <h3 className='font-semibold'>Get Wild With Pepsi Wild Cherry.</h3>
         </div>
 
-          <div className='box1 h-[68vh] bg-gray-900 w-[105vh] border rounded-3xl relative'>
+          <div className='box1 h-[68vh] bg-gray-900 w-[105vh] border rounded-3xl relative overflow-hidden'>
+            <video className="h-full w-full object-cover " src={video1} autoPlay loop muted/>
         <button className='px-5 py-5 border rounded-full bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center align-cemter font-normal'><PlayIcon ref={playRef} className='text-black size-10 pl-1'/></button>   
                
         </div>
@@ -258,8 +275,8 @@ useGSAP(() => {
         <h3 className='font-semibold scale-0'>Get Wild With Pepsi Wild Cherry.</h3>
         </div>
 
-        <div className='box2 h-[68vh] bg-gray-900 w-[30vh] border rounded-3xl'>
-        
+        <div className='box2 h-[68vh] bg-gray-900 w-[30vh] border rounded-3xl relative'>
+        <button className='px-5 py-5 border rounded-full bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center align-cemter font-normal scale-0'><PlayIcon ref={playRef} className='text-black size-10 pl-1'/></button>  
         </div>
         </div>
 
@@ -270,8 +287,8 @@ useGSAP(() => {
         <h3 className='font-semibold scale-0'>Get Wild With Pepsi Wild Cherry.</h3>
         </div>
 
-        <div className='box3 h-[68vh] bg-gray-900 w-[30vh] border rounded-3xl'>
-        
+        <div className='box3 h-[68vh] bg-gray-900 w-[30vh] border rounded-3xl relative'>
+        <button className='px-5 py-5 border rounded-full bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center align-cemter font-normal scale-0'><PlayIcon ref={playRef} className='text-black size-10 pl-1'/></button>  
         </div>
         </div>
         
