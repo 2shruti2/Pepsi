@@ -2,6 +2,7 @@
 // import Navbar from "./ui/components/Navbar";
 import { useEffect, useState } from "react";
 import Hero from "./ui/sections/Hero";
+import ModelView from "./ui/sections/ModelView";
 import OurProducts from "./ui/sections/OurProducts";
 import AnimatedLoadaer from "./ui/components/Hero/AnimatedLoadaer";
 import Navbar from "./ui/components/Navbar";
