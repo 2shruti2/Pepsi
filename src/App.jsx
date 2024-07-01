@@ -6,6 +6,7 @@ import ModelView from "./ui/sections/ModelView";
 import OurProducts from "./ui/sections/OurProducts";
 import AnimatedLoadaer from "./ui/components/Hero/AnimatedLoadaer";
 import Navbar from "./ui/components/Navbar";
+import OurCollaborations from "./ui/sections/OurCollaborations";
 
 
 function App() {
@@ -24,12 +25,13 @@ function App() {
 
     return (
         <div className="App">
-            {loading && <AnimatedLoadaer setLoading={setLoading} imageRevel = {"assets/HeroSection/animatedLogo.png"} />}
+            {/* {loading && <AnimatedLoadaer setLoading={setLoading} imageRevel = {"assets/HeroSection/animatedLogo.png"} />} */}
             {!loading && (
                 <main>
                     {/* Your main website content */}
-                    <Navbar/>
-                    <Hero image1={"assets/HeroSection/lady2.jpg"} image2={"assets/HeroSection/canp.jpg"} image3={"assets/HeroSection/lady.jpg"} /> 
+                    {/* <Navbar/>
+                    <Hero image1={"assets/HeroSection/lady2.jpg"} image2={"assets/HeroSection/canp.jpg"} image3={"assets/HeroSection/lady.jpg"} />  */}
+                    <OurCollaborations />
                     <OurProducts/>
                 </main>
             )}
