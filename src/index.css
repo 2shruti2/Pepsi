@@ -12,25 +12,21 @@
     @apply bg-gray-950 text-slate-100 font-inter tracking-wide;
   }
 
-  /* Customizes the whole scrollbar */
-  .scroll-container::-webkit-scrollbar {
-    width: 7px; /* Width of the scrollbar */
+  ::-webkit-scrollbar {
+    width: 7px; 
   }
 
-  /* Customizes the track of the scrollbar */
-  .scroll-container::-webkit-scrollbar-track {
-    background: none; /* Color of the track */
+  ::-webkit-scrollbar-track {
+    background: none;
   }
 
-  /* Customizes the thumb of the scrollbar */
-  .scroll-container::-webkit-scrollbar-thumb {
-    background: #0e0e96; /* Color of the thumb */
+  ::-webkit-scrollbar-thumb {
+    background: #0e0e96; 
     border-radius: 10px;
   }
 
-  /* Changes the thumb color on hover */
-  .scroll-container::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Darker color on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
     border-radius: 10px;
   }
 
@@ -61,17 +57,6 @@
     @apply container mx-auto;
   }
 
-  /* Custom styles for scroll snapping */
-  .scroll-container {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-  }
-  .scroll-section {
-    height: 100vh;
-    scroll-snap-align: start;
-  }
-
   /* 3d section */
   .canvas-container {
     width: 100vw;
@@ -94,15 +79,5 @@
     height: 100vh !important;
     display: block; /* Ensure no extra space */
   }
-
-  /* pepsi animation component */
-
-  .drop {
-    animation: moveUp 6s forwards;
-  }
-
-  .pepsi-logo {
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-  }
+  
 }

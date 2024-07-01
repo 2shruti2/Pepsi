@@ -31,6 +31,7 @@ function App() {
                     <Navbar/>
                     <Hero image1={"assets/HeroSection/lady2.jpg"} image2={"assets/HeroSection/canp.jpg"} image3={"assets/HeroSection/lady.jpg"} /> 
                     <OurProducts/>
+                    <ModelView/>
                 </main>
             )}
         </div>
