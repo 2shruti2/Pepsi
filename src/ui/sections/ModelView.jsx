@@ -30,12 +30,12 @@ const ModelView = () => {
   });
 
   return (
-    <div className="relative">
-      <div className="section-padding w-full h-full flex max-sm:flex-col">
+    <div>
+      <div className="relative section-padding w-full h-full flex max-sm:flex-col max-sm:mb-20">
         <div>
           <Model />
         </div>
-        <div className=" flex flex-col gap-7 sm:w-3/5 mx-auto mt-[2%]">
+        <div className="max-sm:absolute max-sm:bottom-0 flex flex-col gap-7 sm:w-3/5 mx-auto mt-[2%]">
           <h1 className="text-4xl uppercase font-extrabold" id="para">
           <span className="text-primary"> Experience </span>
             the <span className="text-secondary text-5xl">Ultimate </span> 
