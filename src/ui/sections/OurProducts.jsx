@@ -65,7 +65,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="product">
+      <div className="product max-sm:hidden">
         <Product
           imgSrc1={"assets/products/nitro-pepsi-vanilla.png"}
           name1="pepsi-vanilla"
@@ -74,7 +74,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="product">
+      <div className="product max-sm:hidden">
         <Product
           imgSrc1={"assets/products/pepsi-mango.png"}
           name1="pepsi-mango"
@@ -83,7 +83,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="product">
+      <div className="product max-sm:hidden">
         <Product
           imgSrc1={"assets/products/pepsi-wild-cherry.png"}
           name1="pepsi-wild-cherry"
