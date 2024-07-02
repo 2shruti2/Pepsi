@@ -22,11 +22,11 @@ const OurCollaborations = () => {
 
   const video3Ref = useRef();
 
-  const [isPlay1,setIsPlay1] = useState(false);
+  const [isPlay1,setIsPlay1] = useState(true);
 
-  const [isPlay2,setIsPlay2] = useState(false);
+  const [isPlay2,setIsPlay2] = useState(true);
 
-  const [isPlay3,setIsPlay3] = useState(false);
+  const [isPlay3,setIsPlay3] = useState(true);
 
   useEffect(() => {
    box1Ref.current.addEventListener('click', handleClick1);
@@ -35,18 +35,12 @@ const OurCollaborations = () => {
 
    box3Ref.current.addEventListener('click', handleClick3);
 
-   video1Ref.current.pause();
-
-   video2Ref.current.pause();
-
-   video3Ref.current.pause();
-
   },[])
 
   const handleClick1 = () => {
 
       gsap.to(".box1",{
-        width:"55vw",
+        width:"53vw",
         duration:0.2,
       })
 
@@ -109,7 +103,7 @@ const OurCollaborations = () => {
   const handleClick2 = () => {
 
       gsap.to(".box2",{
-        width:"55vw",
+        width:"53vw",
         duration:0.2,
       })
 
@@ -172,7 +166,7 @@ const OurCollaborations = () => {
   const handleClick3 = () => {
 
       gsap.to(".box3",{
-        width:"55vw",
+        width:"53vw",
         duration:0.2,
       })
 
