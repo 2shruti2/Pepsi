@@ -51,12 +51,12 @@ const OurCollaborations = () => {
       })
 
        gsap.to(".inner-container1 h1",{
-        scale:1,
+        opacity:1,
         duration:0.3,
       })
 
       gsap.to(".inner-container1 h3",{
-        scale:1,
+        opacity:1,
         duration:0.3,
       })
 
@@ -71,12 +71,12 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container2 h1",{
-        scale:0,
+        opacity:0,
         duration:0.3,  
         })
 
       gsap.to(".inner-container2 h3",{
-          scale:0,
+          opacity:0,
           duration:0.3,  
           })
 
@@ -91,12 +91,12 @@ const OurCollaborations = () => {
         })
   
         gsap.to(".inner-container3 h1",{
-          scale:0,
+          opacity:0,
           duration:0.3,  
           })
   
         gsap.to(".inner-container3 h3",{
-            scale:0,
+            opacity:0,
             duration:0.3,  
             })
   
@@ -114,12 +114,12 @@ const OurCollaborations = () => {
       })
 
        gsap.to(".inner-container2 h1",{
-        scale:1,
+        opacity:1,
         duration:0.3,
       })
 
       gsap.to(".inner-container2 h3",{
-        scale:1,
+        opacity:1,
         duration:0.3,
       })
 
@@ -134,12 +134,12 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container1 h1",{
-        scale:0,
+        opacity:0,
         duration:0.3,  
         })
 
       gsap.to(".inner-container1 h3",{
-          scale:0,
+          opacity:0,
           duration:0.3,  
           })
 
@@ -154,12 +154,12 @@ const OurCollaborations = () => {
         })
   
         gsap.to(".inner-container3 h1",{
-          scale:0,
+          opacity:0,
           duration:0.3,  
           })
   
         gsap.to(".inner-container3 h3",{
-            scale:0,
+            opacity:0,
             duration:0.3,  
             })
   
@@ -177,12 +177,12 @@ const OurCollaborations = () => {
       })
 
        gsap.to(".inner-container3 h1",{
-        scale:1,
+        opacity:1,
         duration:0.3,
       })
 
       gsap.to(".inner-container3 h3",{
-        scale:1,
+        opacity:1,
         duration:0.3,
       })
 
@@ -197,12 +197,12 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container1 h1",{
-        scale:0,
+        opacity:0,
         duration:0.3,  
         })
 
       gsap.to(".inner-container1 h3",{
-          scale:0,
+          opacity:0,
           duration:0.3,  
           })
 
@@ -217,12 +217,12 @@ const OurCollaborations = () => {
         })
   
         gsap.to(".inner-container2 h1",{
-          scale:0,
+          opacity:0,
           duration:0.3,  
           })
   
         gsap.to(".inner-container2 h3",{
-            scale:0,
+            opacity:0,
             duration:0.3,  
             })
   
@@ -300,12 +300,12 @@ useGSAP(() => {
 
 
   return (
-    <div className='h-[190vh] w-[127vh] md:h-[120vh] md:w-full p-10'>
-      <div className='container bg-black h-[180vh] md:h-screen rounded-[32px] flex-col md:flex md:justify-evenly'>
+    <div className='h-[190vh] w-[127vh] md:h-[120vh] md:w-full p-10 md:mb-10'>
+      <div className='container bg-black h-[180vh] md:h-screen rounded-[32px] gap-5 flex md:flex md:justify-evenly'>
 
-       <div ref={box1Ref} className="inner-container1 flex flex-col justify-around py-5 pl-5 pr-0 md:p-3">
+       <div ref={box1Ref} className="inner-container1 flex flex-col justify-around md:ml-5">
         <div className="headings1">
-        <h1 className='font-bold mb-3 md:mb-5 text-3xl md:text-5xl'>Pepsi Collabs</h1>
+        <h1 className='font-bold mb-3 md:mb-5 text-3xl md:text-4xl lg:text-5xl'>Pepsi Collabs</h1>
         <h3 className='font-semibold mb-5 md:mb-0'>Ft. Ranveer Singh</h3>
         </div>
 
@@ -313,30 +313,30 @@ useGSAP(() => {
 
             <video ref={video1Ref} className="h-full w-full object-cover rounded-3xl" src={video1} autoPlay loop muted/>
 
-        <button className='px-5 py-5 border rounded-full bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center font-normal' onClick={buttonClick1}><PlayIcon ref={playRef} className='text-black size-10 pl-1'/></button>   
+        <button className='md:px-3 lg:px-5 md:py-3 lg:py-5 border rounded-full  bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center font-normal' onClick={buttonClick1}><PlayIcon ref={playRef} className='text-black size-10 pl-1'/></button>   
                
         </div>
        </div>
 
-       <div ref={box2Ref} className="inner-container2 flex flex-col justify-around py-5 pl-5 pr-0 md:p-3">
+       <div ref={box2Ref} className="inner-container2 flex flex-col justify-around">
        <div className="headings2">
-        <h1 className='font-bold mb-3 md:mb-5 text-3xl md:text-5xl scale-0'>Pepsi Collabs</h1>
-        <h3 className='font-semibold scale-0 mb-5 md:mb-0 '>Ft. Maya Ali</h3>
+        <h1 className='font-bold mb-3 md:mb-5 text-3xl md:text-4xl lg:text-5xl opacity-0'>Pepsi Collabs</h1>
+        <h3 className='font-semibold opacity-0 mb-5 md:mb-0'>Ft. Maya Ali</h3>
         </div>
 
-        <div className='box2 h-[60vh] md:h-[68vh] bg-gray-900 w-[20vh] md:w-[30vh] border border-secondary rounded-3xl relative'>
+        <div className='box2 h-[60vh] md:h-[68vh] bg-gray-900 w-[20vh] md:w-[30vh] border border-secondary rounded-3xl relative overflow-hidden'>
 
            <video ref={video2Ref} className="h-full w-full object-cover rounded-3xl" src={video2} autoPlay loop muted/>
 
-        <button className='px-5 py-5 border rounded-full bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center font-normal scale-0' onClick={buttonClick2}><PlayIcon ref={playRef} className='text-black size-10 pl-1'/></button>  
+        <button className='md:px-3 lg:px-5 md:py-3 lg:py-5border rounded-full bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center font-normal scale-0' onClick={buttonClick2}><PlayIcon ref={playRef} className='text-black size-10 pl-1'/></button>  
         </div>
         </div>
 
-        <div ref={box3Ref} className="inner-container3 flex-col justify-around hidden md:flex ">
+        <div ref={box3Ref} className="inner-container3 flex-col justify-around hidden lg:flex ">
 
         <div className="headings3">
-        <h1 className='font-bold mb-3 md:mb-5 text-3xl md:text-5xl scale-0'>Pepsi Collabs</h1>
-        <h3 className='font-semibold scale-0 md:mb-0'>Ft. Naseem Shah</h3>
+        <h1 className='font-bold mb-3 md:mb-5 text-3xl md:text-5xl opacity-0'>Pepsi Collabs</h1>
+        <h3 className='font-semibold opacity-0 md:mb-0'>Ft. Naseem Shah</h3>
         </div>
 
         <div className='box3 h-[60vh] md:h-[68vh] bg-gray-900 w-[20vh] md:w-[30vh] border border-secondary rounded-3xl relative overflow-hidden'>
