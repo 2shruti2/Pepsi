@@ -1,6 +1,50 @@
+import { FaFacebook } from "react-icons/fa";
+import { IoLogoYoutube } from "react-icons/io";
+import { FaSquareInstagram } from "react-icons/fa6";
+import { FaSquareXTwitter } from "react-icons/fa6";
+
+
 const Footer = () => {
+
+  const aarr = [
+   {"icon" :  <FaFacebook size={25}/>}, 
+   {"icon" : <IoLogoYoutube size={25}  />}, 
+   {"icon" : <FaSquareInstagram size={25}/>}, 
+   {"icon" : <FaSquareXTwitter size={25} />}, 
+  ]
+
+  const arr = [
+    { title: "Home", nav: "#Home" },
+    { title: "Products", nav: "#Products" },
+    { title: "Contact", nav: "#Contact" },
+    { title: "About", nav: "#About" },
+  ]
   return (
-    <div>Footer</div>
+    <div className="w-full px-10 py-4 flex flex-col select-none ">
+      <div className="w-full flex justify-center gap-2">
+     {aarr.map((links , index) => {
+      return (
+        <span key={index} className=" flex items-center justify-center w-12 h-12 rounded-full cursor-pointer hover:bg-black hover:scale-110 p-3">
+        {links.icon }</span>
+    )
+     })}
+     </div>
+     <div className="md:flex justify-center hidden gap-10 p-4 font-semibold">
+        {arr.map((link,index) =>{
+          return(
+          
+            <span key={index} className="text-xs md:text-sm  ">
+             <a href={link.nav}>{link.title}</a> </span>
+           )
+        })
+        }
+     </div>
+     <div className="w-full border-t my-2"></div>
+     <div className="text-center mt-2 text-[0.65rem] lg:text-sm">Copyright by Asap developers 2024</div>
+    
+
+      </div>
+    
   )
 }
 
