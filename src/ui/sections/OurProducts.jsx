@@ -1,42 +1,60 @@
-
-import Product from '../components/our-products/Product';
+import { useEffect } from "react";
+import Product from "../components/our-products/Product";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const OurProducts = () => {
+  useEffect(() => {
+    
+    ScrollTrigger.refresh();
 
-  const scrollRef = useRef();
-  const customScroller = document.querySelector(".scroll-container");
-
-  useGSAP(() => {
-
-    gsap.fromTo(
-      ".product",
-      {
-        opacity: 0,
-        y: 10,
+    gsap.to("#text", {
+      ease: "power1.inOut",
+      opacity: 1,
+      y: 0,
+      scrollTrigger: {
+        trigger: "#text",
+        start: "top 100%",
+        end: "bottom 20%",
+        scrub: true,
       },
-      {
-        ease: "power1.inOut",
-        opacity: 1,
-        y: 0,
-        delay: 0.5,
-        stagger: 1,
-        scrollTrigger: {
-          trigger: scrollRef.current.children,
-          scroller: customScroller,
-          start: "top 70%", // When the top of the element is at 70% of the viewport height
-          toggleActions: "play none none reset", // Re-trigger the animation when it comes into view again
-        },
-      }
-    );
-  });
+    });
 
+    const products = document.querySelectorAll(".product");
+    products.forEach((product) => {
+      gsap.fromTo(
+        product,
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          ease: "power1.inOut",
+          opacity: 1,
+          y: 0,
+          delay: 1,
+          stagger: 0.5,
+          scrollTrigger: {
+            trigger: product,
+            start: "top 50%",
+            end: "bottom 20%",
+            scrub: true,
+          },
+        }
+      );
+    });
+
+    ScrollTrigger.refresh();
+  }, []);
 
   return (
-    <section className="section-padding md:scroll-container" ref={scrollRef}>
-      <div className="sm:scroll-section product" >
+    <section className="section-padding">
+      <h1 className="text-4xl font-bold opacity-0" id="text">
+        Our Products
+      </h1>
+      <div className="product">
         <Product
           imgSrc1={"assets/products/pepsi.png"}
           name1="pepsi"
@@ -47,7 +65,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="sm:scroll-section product">
+      <div className="product">
         <Product
           imgSrc1={"assets/products/nitro-pepsi-vanilla.png"}
           name1="pepsi-vanilla"
@@ -56,7 +74,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="sm:scroll-section product">
+      <div className="product">
         <Product
           imgSrc1={"assets/products/pepsi-mango.png"}
           name1="pepsi-mango"
@@ -65,7 +83,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="sm:scroll-section product">
+      <div className="product">
         <Product
           imgSrc1={"assets/products/pepsi-wild-cherry.png"}
           name1="pepsi-wild-cherry"
@@ -76,7 +94,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="sm:scroll-section product">
+      <div className="product">
         <Product
           imgSrc1={"assets/products/pepsi-caffeine-free.png"}
           name1="pepsi-caffeine-free"
@@ -85,7 +103,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="sm:scroll-section product">
+      <div className="product">
         <Product
           imgSrc1={"assets/products/pepsi-real-sugar.png"}
           name1="pepsi-real-sugar"

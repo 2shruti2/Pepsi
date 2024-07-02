@@ -15,7 +15,7 @@ const Model = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setRotateDirection((prev) => -prev); // Toggle the direction
-    }, 3000); // Change direction every 5 seconds
+    }, 3000); // Change direction every 3 seconds
 
     return () => clearInterval(interval);
   }, []);

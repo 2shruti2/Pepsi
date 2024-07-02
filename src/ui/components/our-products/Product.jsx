@@ -1,20 +1,16 @@
 import PropTypes from "prop-types";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Product = ({ imgSrc1, imgSrc2 = "", imgSrc3 = "", name1, name2 = "", name3 = "" }) => {
-  const scrollRef = useRef();
-
   useEffect(() => {
-    const element = scrollRef.current;
-    const customScroller = document.querySelector(".scroll-container");
-
-    if (element) {
+    const paras = document.querySelectorAll(".para");
+    paras.forEach((para) => {
       gsap.fromTo(
-        ".para",
+        para,
         {
           opacity: 0,
           y: 20,
@@ -23,21 +19,20 @@ const Product = ({ imgSrc1, imgSrc2 = "", imgSrc3 = "", name1, name2 = "", name3
           ease: "power1.inOut",
           opacity: 1,
           y: 0,
-          delay: 1,
-          stagger: 0.1,
+          delay: 0.2,
           scrollTrigger: {
-            trigger: element,
-            scroller: customScroller,
-            start: "top 30%", // When the top of the element is at 70% of the viewport height
-            toggleActions: "play none none reset", // Re-trigger the animation when it comes into view again
+            trigger: para,
+            start: "top 100%",
+            end: "bottom 20%",
+            scrub: true,
           },
         }
       );
-    }
+    });
   }, []);
 
   return (
-    <div className="section-padding overflow-none" ref={scrollRef}>
+    <div className="section-padding overflow-none">
       <div className="flex max-sm:flex-col max-sm:gap-10 justify-between items-center">
         <div className="flex-1 flex justify-center">
           <div className="flex flex-col gap-7 justify-center">
