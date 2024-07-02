@@ -7,6 +7,7 @@ import OurProducts from "./ui/sections/OurProducts";
 import AnimatedLoadaer from "./ui/components/Hero/AnimatedLoadaer";
 import Navbar from "./ui/components/Navbar";
 import Glance from "./ui/components/our-products/Glance";
+import OurCollaborations from "./ui/sections/OurCollaborations";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -46,6 +47,7 @@ function App() {
               ^ Cheers ^
             </p>
           </div>
+          <OurCollaborations />
           <OurProducts />
         </main>
       )}
