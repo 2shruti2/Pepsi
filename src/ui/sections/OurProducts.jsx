@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Product from "../components/our-products/Product";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -6,51 +6,58 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const OurProducts = () => {
+  const containerRef = useRef(null);
+
   useEffect(() => {
-    
-    ScrollTrigger.refresh();
+    const ctx = gsap.context(() => {
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
 
-    gsap.to("#text", {
-      ease: "power1.inOut",
-      opacity: 1,
-      y: 0,
-      scrollTrigger: {
-        trigger: "#text",
-        start: "top 100%",
-        end: "bottom 20%",
-        scrub: true,
-      },
-    });
-
-    const products = document.querySelectorAll(".product");
-    products.forEach((product) => {
-      gsap.fromTo(
-        product,
-        {
-          opacity: 0,
-          y: 20,
-        },
-        {
+        gsap.to("#text", {
           ease: "power1.inOut",
           opacity: 1,
           y: 0,
-          delay: 1,
-          stagger: 0.5,
           scrollTrigger: {
-            trigger: product,
-            start: "top 50%",
+            trigger: "#text",
+            start: "top 100%",
             end: "bottom 20%",
             scrub: true,
           },
-        }
-      );
-    });
+        });
 
-    ScrollTrigger.refresh();
+        const products = document.querySelectorAll(".product");
+        products.forEach((product) => {
+          gsap.fromTo(
+            product,
+            {
+              opacity: 0,
+              y: 20,
+            },
+            {
+              ease: "power1.inOut",
+              opacity: 1,
+              y: 0,
+              delay: 0.5,
+              stagger: 0.3,
+              scrollTrigger: {
+                trigger: product,
+                start: "top 80%",
+                end: "bottom 20%",
+                scrub: true,
+              },
+            }
+          );
+        });
+
+        ScrollTrigger.refresh();
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section className="section-padding">
+    <section className="section-padding" ref={containerRef}>
       <h1 className="text-4xl font-bold opacity-0" id="text">
         Our Products
       </h1>
@@ -65,7 +72,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="product">
+      <div className="product max-sm:hidden">
         <Product
           imgSrc1={"assets/products/nitro-pepsi-vanilla.png"}
           name1="pepsi-vanilla"
@@ -74,7 +81,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="product">
+      <div className="product max-sm:hidden">
         <Product
           imgSrc1={"assets/products/pepsi-mango.png"}
           name1="pepsi-mango"
@@ -83,7 +90,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="product">
+      <div className="product max-sm:hidden">
         <Product
           imgSrc1={"assets/products/pepsi-wild-cherry.png"}
           name1="pepsi-wild-cherry"
