@@ -6,6 +6,7 @@ import ModelView from "./ui/sections/ModelView";
 import OurProducts from "./ui/sections/OurProducts";
 import AnimatedLoadaer from "./ui/components/Hero/AnimatedLoadaer";
 import Navbar from "./ui/components/Navbar";
+import Footer from "./ui/components/Footer";
 
 
 function App() {
@@ -30,7 +31,9 @@ function App() {
                     {/* Your main website content */}
                     <Navbar/>
                     <Hero image1={"assets/HeroSection/lady2.jpg"} image2={"assets/HeroSection/canp.jpg"} image3={"assets/HeroSection/lady.jpg"} /> 
+                    <ModelView/> 
                     <OurProducts/>
+                    <Footer/>
                 </main>
             )}
         </div>

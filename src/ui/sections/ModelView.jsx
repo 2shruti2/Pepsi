@@ -31,7 +31,7 @@ const ModelView = () => {
   });
 
   return (
-    <div className="relative">
+    <div className="relative" id="About">
       <div className="section-padding w-full h-full flex max-sm:flex-col">
         <div>
           <Model />
