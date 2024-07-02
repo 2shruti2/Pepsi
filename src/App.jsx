@@ -7,6 +7,7 @@ import OurProducts from "./ui/sections/OurProducts";
 import AnimatedLoadaer from "./ui/components/Hero/AnimatedLoadaer";
 import Navbar from "./ui/components/Navbar";
 import Glance from "./ui/components/our-products/Glance";
+import Footer from "./ui/components/Footer";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -31,7 +32,7 @@ function App() {
       {!loading && (
         <main>
           {/* Your main website content */}
-          <Navbar />
+          <Navbar logo={"assets/HeroSection/Pepsi-Logo.png"}/>
           <Hero
             image1={"assets/HeroSection/lady2.jpg"}
             image2={"assets/HeroSection/canp.jpg"}
@@ -39,6 +40,7 @@ function App() {
           />
           <div className="relative">
             <ModelView />
+        
             <div className="max-sm:hidden absolute top-[61%] w-full bg-slate-900 h-64 overflow-hidden">
               <Glance />
             </div>
@@ -46,7 +48,9 @@ function App() {
               ^ Cheers ^
             </p>
           </div>
+          
           <OurProducts />
+          <Footer/>
         </main>
       )}
     </div>
