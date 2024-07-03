@@ -71,7 +71,7 @@ const Hero = ({ image1, image2, image3 }) => {
       <div className="imageDiv w-[60%] md:w-[25%] h-[45vmax] md:h-[35vmax] rounded-lg  relative">
         <div className="w-full h-full  absolute top-0 left-0 z-10">
           <img
-            className="w-full h-full rounded-lg object-cover rotate-[6deg] origin-bottom-right "
+            className="img w-full h-full rounded-lg object-cover rotate-[6deg] origin-bottom-right "
             src={image2}
             alt="pepsi"
           />

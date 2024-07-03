@@ -61,7 +61,7 @@ const OurProducts = () => {
       <h1 className="text-4xl font-bold opacity-0" id="text">
         Our Products
       </h1>
-      <div className="product">
+      <div className="product max-sm:hidden">
         <Product
           imgSrc1={"assets/products/pepsi.png"}
           name1="pepsi"
@@ -101,7 +101,7 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="product">
+      <div className="product max-sm:hidden">
         <Product
           imgSrc1={"assets/products/pepsi-caffeine-free.png"}
           name1="pepsi-caffeine-free"
@@ -110,8 +110,33 @@ const OurProducts = () => {
         />
       </div>
 
-      <div className="product">
+      <div className="product max-sm:hidden">
         <Product
+          imgSrc1={"assets/products/pepsi-real-sugar.png"}
+          name1="pepsi-real-sugar"
+        />
+      </div>
+
+      <div className="sm:hidden">
+      <Product
+          imgSrc1={"assets/products/pepsi.png"}
+          name1="pepsi"
+          imgSrc2={"assets/products/pepsi-zero-sugar.png"}
+          name2="pepsi-zero-sugar"
+          imgSrc3={"assets/products/pepsi-diet.png"}
+          name3="pepsi-diet"
+        />
+      </div>
+      <div className="sm:hidden">
+      <Product
+          imgSrc1={"assets/products/pepsi-caffeine-free.png"}
+          name1="pepsi-caffeine-free"
+          imgSrc2={"assets/products/pepsi-diet-caffeine-free.png"}
+          name2="pepsi-diet-caffeine-free"
+        />
+      </div>
+      <div className="sm:hidden">
+      <Product
           imgSrc1={"assets/products/pepsi-real-sugar.png"}
           name1="pepsi-real-sugar"
         />
