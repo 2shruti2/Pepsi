@@ -30,11 +30,11 @@ function App() {
       {!loading && (
         <main>
           {/* Your main website content */}
-          <Navbar />
+          <Navbar logo={"assets/HeroSection/Pepsi-Logo.png"}/>
           <Hero
-            image1={"assets/HeroSection/lady2.jpg"}
-            image2={"assets/HeroSection/canp.jpg"}
-            image3={"assets/HeroSection/lady.jpg"}
+            image1={"assets/HeroSection/lady2.webp"}
+            image2={"assets/HeroSection/canp.webp"}
+            image3={"assets/HeroSection/lady.webp"}
           />
           <About/>
           <OurCollaborations/>
