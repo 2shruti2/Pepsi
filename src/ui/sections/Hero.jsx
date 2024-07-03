@@ -1,31 +1,39 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React from "react";
+import video from "../../assets/A-Pepsi.mp4"
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = ({ image1, image2, image3 }) => {
   const tlFeatures = gsap.timeline();
   const tl = gsap.timeline();
 
   useGSAP(() => {
-    tl.from(".MHstarting", {
-      x: -100,
+    gsap.from(".MHending", {
+      x: 100,
       opacity: 0,
       delay: 1,
       duration: 1,
-    });
-    tl.from(".MHending", {
-      x: 100,
-      opacity: 0,
-      delay: "-1",
-      duration: 1,
+      ease: "power3.inOut",
     });
     tl.from(".img", {
       rotate: 0,
       opacity: 0,
-      stagger: -0.1,
-      ease: "power3.inOut",
+      duration: 1,
+      stagger: 1,
+      ease: "power1.inOut",
+    });
+    tl.from(".MHstarting", {
+      x: -100,
+      opacity: 0,
+      delay: "-1.5",
+      duration: 1,
+       ease: "power3.inOut"
     });
   });
+  
 
   useGSAP(() => {
     tlFeatures.from(".featuresH", {
@@ -43,35 +51,50 @@ const Hero = ({ image1, image2, image3 }) => {
     });
   });
 
+  useGSAP(()=>{
+    gsap.from(".video",{
+      x: 30,
+      opacity: 0,
+      delay:1,
+      duration: 1,
+    })
+  })
+
   return (
-    <div className="h-screen px-10  flex justify-center items-center relative overflow-hidden select-none">
-      <span className="MHstarting text-[6vmax] font-bold leading-[5.5rem] tracking-tighter absolute top-[5%] md:top-[30%] lg:top-[20%] md:left-[20%] lg:left-[15%] z-20">
+    <div id="Home" className="h-screen px-10  flex justify-center items-center relative overflow-hidden select-none">
+      <span className="MHstarting text-[6vmax] font-bold leading-[5.5rem] tracking-tighter absolute top-[5%] md:top-[30%] lg:top-[20%] md:left-[20%] lg:left-[10%] z-20">
         <span className="text-primary">Taste</span> the Thrill{" "}
       </span>
-      <span className="MHending text-[6vmax] font-bold leading-[5.5rem] tracking-tighter absolute top-[11%] md:top-[60%]  right-[32%] md:riht-[20%]  z-20">
+      <span className="MHending text-[6vmax] font-bold leading-[5.5rem] tracking-tighter absolute top-[11%] md:top-[60%]  right-[32%] md:right-[25%]  z-20">
         {" "}
         of <span className="text-secondary">Now!</span>
       </span>
-      <div className="w-[60%] md:w-[25%] h-[45vmax] md:h-[35vmax] rounded-lg  relative ">
+      <div className="imageDiv w-[60%] md:w-[25%] h-[45vmax] md:h-[35vmax] rounded-lg  relative">
+        <div className="w-full h-full  absolute top-0 left-0">
         <img
-          className="img w-full h-full rounded-lg object-cover rotate-[6deg] origin-bottom-right absolute"
+          className="img w-full h-full rounded-lg object-cover rotate-[6deg] origin-bottom-right "
           src={image2}
           alt=""
         />
+        </div>
+        <div className="w-full h-full  absolute top-0 left-0">
         <img
-          className="img w-full h-full rounded-lg object-cover rotate-2 origin-bottom-right absolute"
+          className="img w-full h-full rounded-lg object-cover rotate-2 origin-bottom-right "
           src={image1}
           alt=""
         />
+        </div>
+        <div className="w-full h-full  absolute top-0 left-0">
         <img
-          className="img h-full rounded-lg object-cover -rotate-2 origin-bottom-right absolute z-10"
+          className="img w-full h-full rounded-lg object-cover -rotate-2 origin-bottom-right "
           src={image3}
           alt=""
         />
+        </div>
 
-        
-        <div className="absolute w-56 h-32  rounded-xl  bottom-[20%] -left-[90%] bg-black">
-        <img src="" alt="" />
+{/* video div  */}
+        <div className="video absolute  hidden lg:flex w-56 h-32  rounded-xl overflow-hidden bottom-[20%] -left-[110%] bg-black">
+        <video src={video} muted autoPlay loop className=""></video>
       </div>
 
         <button className="px-3 py-1 rounded-lg lg:hidden absolute -bottom-[18%] left-[19%] cursor-pointer hover:bg-black bg-gray-900 hover:scale-110">
@@ -79,7 +102,7 @@ const Hero = ({ image1, image2, image3 }) => {
         </button>
       </div>
       <div className="p-3 lg:flex flex-col gap-3 hidden  absolute top-[20%] right-[15%] ">
-          <span className="featuresH text-xl font-bold ">Our Key Features</span>
+          <span className="featuresH text-xl font-bold "><span className="text-primary">Our</span> Key Features</span>
           {[
             "Variety of flavors",
             "Ultimate Refreshment",
@@ -96,7 +119,6 @@ const Hero = ({ image1, image2, image3 }) => {
     </div>
   );
 };
-// C:\Users\Prashant Hazariwal\Desktop\isro project\isro\public\assets\HeroSection\A-Pepsi.mp4
-// w-44 h-56 bg-black rounded absolute top-[20%] right-[15%]
+
 
 export default Hero;

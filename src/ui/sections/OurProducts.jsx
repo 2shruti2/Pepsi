@@ -50,7 +50,7 @@ const OurProducts = () => {
   }, []);
 
   return (
-    <section className="section-padding">
+    <section id="Products" className="section-padding">
       <h1 className="text-4xl font-bold opacity-0" id="text">
         Our Products
       </h1>

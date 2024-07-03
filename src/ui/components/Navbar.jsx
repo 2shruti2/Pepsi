@@ -20,12 +20,7 @@ const Navbar = ({logo}) => {
       delay: 1,
       duration: 0.9,
     });
-    gsap.from(".shop", {
-      opacity: 0,
-      x: 10,
-      delay: 1,
-      duration: 0.9,
-    });
+    
   });
 
   useGSAP(() => {
@@ -51,7 +46,7 @@ const Navbar = ({logo}) => {
       </div>
 
       {/* links */}
-      <div className="hidden w-4/5 lg:flex justify-center gap-6 py-4 ">
+      <div className="hidden w-4/5 lg:flex justify-center lg:justify-end gap-6 py-4 ">
       
         {[
           { title: "Home", nav: "#Home" },
@@ -61,7 +56,7 @@ const Navbar = ({logo}) => {
           return (
             <span
               key={item.title}
-              className="inline-block nav1 cursor-pointer text-sm md:text-lg"
+              className="inline-block nav1 cursor-pointer text-sm md:text-base"
             >
               <a href={item.nav}>{item.title}</a>
             </span>
@@ -86,7 +81,7 @@ const Navbar = ({logo}) => {
 
       {/* sidebar  */}
       {sideBar && (
-        <div className="sideBar  w-[45%] h-screen absolute top-0 right-0 bg-black flex flex-col gap-4 px-4 md:px-8 py-4 z-20">
+        <div className="sideBar  w-[45%] h-screen absolute top-0 right-0 bg-black flex flex-col gap-4 px-4 md:px-8 py-4 z-50">
           <button
             onClick={() => {
               setSideBar(!sideBar);

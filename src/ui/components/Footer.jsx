@@ -2,15 +2,33 @@ import { FaFacebook } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import gsap from "gsap";
 
+gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
 
+  useGSAP(() => {
+    gsap.from("#footer",{ 
+        width:0,
+        opacity: 0,
+        scrollTrigger:{
+          trigger:"#footer",
+          start: "top 100%",
+          end: "top 50%",
+          scrub:3
+        }
+      }
+    );
+  });
+
   const aarr = [
-   {"icon" :  <FaFacebook size={25}/>}, 
-   {"icon" : <IoLogoYoutube size={25}  />}, 
-   {"icon" : <FaSquareInstagram size={25}/>}, 
-   {"icon" : <FaSquareXTwitter size={25} />}, 
+   {"icon" :  <FaFacebook size={25}/> , "url" : "https://www.facebook.com/PepsiIndia/?brand_redir=56381779049"}, 
+   {"icon" : <IoLogoYoutube size={25}  /> , "url": "https://www.youtube.com/user/Pepsi"}, 
+   {"icon" : <FaSquareInstagram size={25}/> , "url" : "https://www.instagram.com/pepsi"}, 
+   {"icon" : <FaSquareXTwitter size={25} /> , "url" : "https://x.com/pepsi"}, 
   ]
 
   const arr = [
@@ -20,12 +38,15 @@ const Footer = () => {
     { title: "About", nav: "#About" },
   ]
   return (
-    <div className="w-full px-10 py-4 flex flex-col select-none ">
+
+    <div className="w-full h-80 overflow-hidden relative ">
+
+<div id="footer" className=" w-full bg-black rounded-3xl px-10 py-4 flex flex-col select-none absolute bottom-0 left-1/2 -translate-x-1/2 ">
       <div className="w-full flex justify-center gap-2">
      {aarr.map((links , index) => {
       return (
         <span key={index} className=" flex items-center justify-center w-12 h-12 rounded-full cursor-pointer hover:bg-black hover:scale-110 p-3">
-        {links.icon }</span>
+        <a href={links.url}>{links.icon }</a></span>
     )
      })}
      </div>
@@ -34,7 +55,7 @@ const Footer = () => {
           return(
           
             <span key={index} className="text-xs md:text-sm  ">
-             <a href={link.nav}>{link.title}</a> </span>
+             <a href={link.nav} target="_blank">{link.title}</a> </span>
            )
         })
         }
@@ -44,6 +65,8 @@ const Footer = () => {
     
 
       </div>
+    </div>
+   
     
   )
 }
