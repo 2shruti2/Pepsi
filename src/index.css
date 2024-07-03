@@ -78,7 +78,7 @@
 @layer components {
   /* keep section padding in all section components */
   .section-padding {
-    @apply px-10 py-7 sm:px-20 sm:py-16;
+    @apply px-7 py-7 sm:px-20 sm:py-16;
   }
   .page-wrapper {
     @apply container mx-auto;
