@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { ArrowRightCircleIcon, PlayIcon } from '@heroicons/react/16/solid' 
+import { ArrowRightCircleIcon, PauseIcon, PlayIcon } from '@heroicons/react/16/solid' 
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import video1 from '../../assets/video1.mp4'
@@ -297,47 +297,47 @@ useGSAP(() => {
     <div className='w-full  md:mb-10 overflow-hidden'>
       <div className='container mg:w-screen px-7 py-8 md:pl-6 md:pr-7 md:ml-5 lg:py-8 lg:pl-3 lg:pr-8 lg:ml-7 bg-black h-screen rounded-[32px] gap-8 md:gap-5 lg:gap-6 flex justify-around'>
 
-       <div ref={box1Ref} className="inner-container1 flex flex-col justify-around">
+       <div ref={box1Ref} className="inner-container1 flex flex-col md:justify-around">
         <div className="headings1 h-[20vh]">
-        <h1 className='font-bold mb-3 md:mb-5 text-base md:text-3xl lg:text-5xl'>Pepsi Collabs</h1>
-        <h3 className='font-normal text-xs md:text-sm lg:text-lg mb-5'>Ft. Maya Ali</h3>
+        <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl'>Pepsi Collabs</h1>
+        <h3 className='font-normal text-base md:text-sm lg:text-lg mb-5'>Ft. Maya Ali</h3>
         </div>
 
           <div className='box1 h-[60vh] md:h-[68vh] bg-gray-900 w-[53vw] border border-secondary rounded-3xl relative overflow-hidden'>
 
             <video ref={video1Ref} className="h-full w-full object-none rounded-3xl" src={video2} autoPlay loop muted/>
 
-        <button className='md:px-3 lg:px-5 md:py-3 lg:py-5 border rounded-full  bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center font-normal' onClick={buttonClick1}><PlayIcon ref={playRef} className='text-black size-10 pl-1'/></button>   
+        <button className='px-2 md:px-3 lg:px-5 py-2 md:py-3 lg:py-5 border rounded-full  bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center items-center font-normal' onClick={buttonClick1}>{isPlay1 ? <PauseIcon ref={playRef} className='text-black size-7 md:size-10'/> : <PlayIcon ref={playRef} className='text-black size-7 md:size-10 pl-1'/>}</button>   
                
         </div>
        </div>
 
-       <div ref={box2Ref} className="inner-container2 flex flex-col justify-around">
+       <div ref={box2Ref} className="inner-container2 flex flex-col md:justify-around">
        <div className="headings2 h-[20vh]">
-        <h1 className='font-bold mb-3 md:mb-5 text-base md:text-3xl lg:text-5xl opacity-0'>Pepsi Collabs</h1>
-        <h3 className='font-normal text-xs md:text-sm lg:text-lg opacity-0 mb-5'>Ft. Naseem Shah</h3>
+        <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl opacity-0'>Pepsi Collabs</h1>
+        <h3 className='font-normal text-base md:text-sm lg:text-lg opacity-0 mb-5'>Ft. Naseem Shah</h3>
         </div>
 
         <div className='box2 h-[60vh] md:h-[68vh] bg-gray-900 w-[15vw] border border-secondary rounded-3xl relative overflow-hidden'>
 
            <video ref={video2Ref} className="h-full w-full object-none" src={video3} autoPlay loop muted/>
 
-        <button className='md:px-3 lg:px-5 md:py-3 lg:py-5 border rounded-full bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center font-normal scale-0' onClick={buttonClick2}><PlayIcon ref={playRef} className='text-black size-10 pl-1'/></button>  
+        <button className='px-2 md:px-3 lg:px-5 py-2 md:py-3 lg:py-5 border rounded-full bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center font-normal scale-0' onClick={buttonClick2}>{isPlay2 ? <PauseIcon ref={playRef} className='text-black size-7 md:size-10'/>:<PlayIcon ref={playRef} className='text-black size-7 md:size-10 pl-1'/>}</button>  
         </div>
         </div>
 
-        <div ref={box3Ref} className="inner-container3 flex-col justify-around hidden md:flex ">
+        <div ref={box3Ref} className="inner-container3 flex-col md:justify-around hidden md:flex ">
 
         <div className="headings3 h-[20vh]">
-        <h1 className='font-bold mb-3 md:mb-5 text-base md:text-3xl lg:text-5xl opacity-0'>Pepsi Collabs</h1>
-        <h3 className='font-normal text-xs md:text-sm lg:text-lg opacity-0'>Ft. Ranveer Singh</h3>
+        <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl opacity-0'>Pepsi Collabs</h1>
+        <h3 className='font-normal text-base md:text-sm lg:text-lg opacity-0'>Ft. Ranveer Singh</h3>
         </div>
 
         <div className='box3 h-[60vh] md:h-[68vh] bg-gray-900 w-[15vw] border border-secondary rounded-3xl relative overflow-hidden'>
 
            <video ref={video3Ref} className="h-full w-full object-none rounded-3xl" src={video1} autoPlay loop muted/>
 
-        <button className='px-5 py-5 border rounded-full bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center font-normal scale-0' onClick={buttonClick3}><PlayIcon ref={playRef} className='text-black size-10 pl-1'/></button>
+        <button className='px-2 md:px-3 lg:px-5 py-2 md:py-3 lg:py-5 border rounded-full bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center font-normal scale-0' onClick={buttonClick3}>{isPlay3 ? <PauseIcon ref={playRef} className='text-black size-10'/> : <PlayIcon ref={playRef} className='text-black size-10 pl-1'/>}</button>
         </div>
         </div>
         
