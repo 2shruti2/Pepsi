@@ -11,26 +11,26 @@ const Hero = ({ image1, image2, image3 }) => {
   const tl = gsap.timeline();
 
   useGSAP(() => {
+    
+    tl.from(".MHstarting", {
+      x: -100,
+      opacity: 0,
+      delay: 1,
+      duration: 1,
+       ease: "power1.inOut"
+    })
+    tl.from(".img", {
+      rotate: 0,
+      opacity: 0,
+      stagger: 1,
+      ease: "power1.inOut",
+    })
     gsap.from(".MHending", {
       x: 100,
       opacity: 0,
       delay: 1,
       duration: 1,
-      ease: "power3.inOut",
-    });
-    tl.from(".img", {
-      rotate: 0,
-      opacity: 0,
-      duration: 1,
-      stagger: 1,
       ease: "power1.inOut",
-    });
-    tl.from(".MHstarting", {
-      x: -100,
-      opacity: 0,
-      delay: "-1.5",
-      duration: 1,
-       ease: "power3.inOut"
     });
   });
   
@@ -41,14 +41,13 @@ const Hero = ({ image1, image2, image3 }) => {
       opacity: 0,
       delay: 1,
       duration: 1,
-    });
+    })
     tlFeatures.from(".features", {
       opacity: 0,
       y: 10,
       delay: 0.6,
-      duration: 0.4,
       stagger: 0.5,
-    });
+    })
   });
 
   useGSAP(()=>{
@@ -70,21 +69,21 @@ const Hero = ({ image1, image2, image3 }) => {
         of <span className="text-secondary">Now!</span>
       </span>
       <div className="imageDiv w-[60%] md:w-[25%] h-[45vmax] md:h-[35vmax] rounded-lg  relative">
-        <div className="w-full h-full  absolute top-0 left-0">
+        <div className="w-full h-full  absolute top-0 left-0 z-10">
         <img
           className="img w-full h-full rounded-lg object-cover rotate-[6deg] origin-bottom-right "
           src={image2}
           alt=""
         />
         </div>
-        <div className="w-full h-full  absolute top-0 left-0">
+        <div className="w-full h-full  absolute top-0 left-0 z-[11]">
         <img
           className="img w-full h-full rounded-lg object-cover rotate-2 origin-bottom-right "
           src={image1}
           alt=""
         />
         </div>
-        <div className="w-full h-full  absolute top-0 left-0">
+        <div className="w-full h-full  absolute top-0 left-0 z-[12]">
         <img
           className="img w-full h-full rounded-lg object-cover -rotate-2 origin-bottom-right "
           src={image3}
