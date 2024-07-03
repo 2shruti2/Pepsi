@@ -57,7 +57,7 @@ const OurProducts = () => {
   }, []);
 
   return (
-    <section className="section-padding bg-secondary background" ref={containerRef}>
+    <section id="Products" className="section-padding bg-secondary background" ref={containerRef}>
       <h1 className="text-4xl font-bold opacity-0" id="text">
         Our Products
       </h1>

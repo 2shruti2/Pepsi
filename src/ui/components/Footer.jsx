@@ -66,7 +66,7 @@ const Footer = () => {
           {arr.map((link, index) => {
             return (
               <span key={index} className="text-xs md:text-sm  ">
-                <a href={link.nav} target="_blank">
+                <a href={link.nav}>
                   {link.title}
                 </a>{" "}
               </span>

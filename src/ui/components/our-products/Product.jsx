@@ -37,14 +37,14 @@ const Product = ({ imgSrc1, imgSrc2 = "", imgSrc3 = "", name1, name2 = "", name3
         <div className="flex-1 flex justify-center">
           <div className="flex flex-col gap-7 justify-center">
             <img alt={name1} src={imgSrc1} className="w-[12.5rem] md:mt-12 mx-auto" />
-            <h2 className="font-medium uppercase text-center para opacity-0">{name1.replaceAll("-", " ")}</h2>
+            <h2 className="font-semibold text-lg uppercase text-center para opacity-0">{name1.replaceAll("-", " ")}</h2>
           </div>
         </div>
         {imgSrc2 && name2 && (
           <div className="flex-1 flex justify-center">
             <div className="flex flex-col gap-7 justify-center">
               <img alt={name2} src={imgSrc2} className="w-[12.5rem] md:mt-12 mx-auto" />
-              <h2 className="font-medium uppercase text-center para opacity-0">{name2.replaceAll("-", " ")}</h2>
+              <h2 className="font-semibold text-lg uppercase text-center para opacity-0">{name2.replaceAll("-", " ")}</h2>
             </div>
           </div>
         )}
@@ -52,7 +52,7 @@ const Product = ({ imgSrc1, imgSrc2 = "", imgSrc3 = "", name1, name2 = "", name3
           <div className="flex-1 flex justify-center">
             <div className="flex flex-col gap-7 justify-center">
               <img alt={name3} src={imgSrc3} className="w-[12.5rem] md:mt-12 mx-auto" />
-              <h2 className="font-medium uppercase text-center para opacity-0">{name3.replaceAll("-", " ")}</h2>
+              <h2 className="font-semibold text-lg uppercase text-center para opacity-0">{name3.replaceAll("-", " ")}</h2>
             </div>
           </div>
         )}

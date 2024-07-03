@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useState } from "react";
+import { useState } from "react";
 import { MdOutlineMenu } from "react-icons/md";
 import { MdOutlineClose } from "react-icons/md";
 
@@ -37,6 +37,7 @@ const Navbar = ({logo}) => {
       duration: 0.6,
     });
   }, [sideBar]);
+
   return (
     <nav className="w-full px-10 py-4 flex justify-between relative select-none">
       {/* logo */}
