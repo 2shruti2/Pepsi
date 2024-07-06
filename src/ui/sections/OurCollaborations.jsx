@@ -300,7 +300,7 @@ useGSAP(() => {
 
   return (
     <div className='w-full overflow-hidden section-padding'>
-      <div className='container mg:w-screen lg:px-4 h-screen rounded-[32px] gap-5 md:gap-12 lg:gap-12 flex'>
+      <div className='container mg:w-screen h-screen rounded-[32px] gap-5 md:gap-12 lg:gap-12 flex'>
 
       {/* container 1 */}
        <div ref={box1Ref} className="inner-container1 w-[54vw] flex flex-col md:justify-around">
