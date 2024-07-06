@@ -1,4 +1,4 @@
-import Glance from "../components/our-products/Glance"
+import Glance from "../components/model-view/Glance"
 import ModelView from "./ModelView" 
 
 const About = () => {

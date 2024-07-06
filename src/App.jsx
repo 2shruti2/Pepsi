@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import Hero from "./ui/sections/Hero";
-import OurProducts from "./ui/sections/OurProducts";
 import AnimatedLoadaer from "./ui/components/Hero/AnimatedLoadaer";
 import Navbar from "./ui/components/Navbar";
 import OurCollaborations from "./ui/sections/OurCollaborations";
 import Footer from "./ui/components/Footer";
 import About from "./ui/sections/About";
+import Discover from "./ui/sections/Discover";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -38,7 +38,7 @@ function App() {
           />
           <About/>
           <OurCollaborations/>
-          <OurProducts />
+          <Discover/>
           <Footer/>
         </main>
       )}

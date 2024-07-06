@@ -15,7 +15,7 @@ const Model = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setRotateDirection((prev) => -prev); // Toggle the direction
-    }, 3000); // Change direction every 3 seconds
+    }, 5000); // Change direction every 3 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -28,7 +28,7 @@ const Model = () => {
       <OrbitControls 
        enableZoom={false}
        autoRotate
-       autoRotateSpeed={8 * rotateDirection}
+       autoRotateSpeed={6 * rotateDirection}
        minPolarAngle={Math.PI / 4} 
        maxPolarAngle={Math.PI / 1.8} 
        minAzimuthAngle={-Math.PI / 8} 
