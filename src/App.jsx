@@ -29,7 +29,7 @@ function App() {
       )}
       {!loading && (
         <main>
-          {/* Your main website content */}
+          Your main website content
           <Navbar />
           <Hero
             image1={"assets/HeroSection/lady2.jpg"}
