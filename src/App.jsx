@@ -6,6 +6,7 @@ import OurCollaborations from "./ui/sections/OurCollaborations";
 import Footer from "./ui/components/Footer";
 import About from "./ui/sections/About";
 import Discover from "./ui/sections/Discover";
+import Contact from "./ui/sections/Contact";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -30,7 +31,7 @@ function App() {
       {!loading && (
         <main>
           {/* Your main website content */}
-          <Navbar logo={"assets/HeroSection/Pepsi-Logo.png"}/>
+          <Navbar logo={"assets/HeroSection/Pepsi-Logo.png"} />
           <Hero
             image1={"assets/HeroSection/lady2.webp"}
             image2={"assets/HeroSection/canp.webp"}
@@ -39,6 +40,7 @@ function App() {
           <About/>
           <OurCollaborations/>
           <Discover/>
+          <Contact/>
           <Footer/>
         </main>
       )}
