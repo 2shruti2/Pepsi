@@ -47,7 +47,7 @@ const ModelView = () => {
             <span className="text-white font-bold text-3xl">Pepsi</span>: Where
             Flavor Meets Excitement{" "}
           </h2>
-          <p id="para">
+          <p id="para" className="max-sm:pr-7">
             Indulge in the invigorating taste of Pepsi, the legendary beverage
             that has been delighting taste buds for generations. With its
             perfect blend of bold flavor and refreshing bubbles, Pepsi

@@ -1,4 +1,3 @@
-import React from "react";
 import { FaFacebook } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
 import { FaSquareInstagram } from "react-icons/fa6";
@@ -111,7 +110,7 @@ const Contact = () => {
             name=""
             id="texarea"
             placeholder="MESSAGE"
-            className="w-full lg:w-[95%] lg:h-36 lg:text-xl p-4 ml-2 rounded-[2rem]"
+            className="w-full lg:w-[95%] lg:h-36 lg:text-xl p-4 sm:ml-3 rounded-[2rem]"
           ></textarea>
 
           <button className="px-3 py-1 rounded-lg ml-3 cursor-pointer hover:bg-black bg-gray-900 hover:scale-110">
