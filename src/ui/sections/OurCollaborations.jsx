@@ -2,15 +2,11 @@ import React, { useEffect, useRef, useState } from 'react'
 import { ArrowRightCircleIcon, PauseIcon, PlayIcon } from '@heroicons/react/16/solid' 
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import ScrollTrigger from "gsap/ScrollTrigger";
 import video1 from '../../assets/video1.mp4'
 import video2 from '../../assets/video2.mp4'
 import video3 from '../../assets/video3.mp4'
 
-gsap.registerPlugin(ScrollTrigger);
-
 const OurCollaborations = () => {
-
 
   const playRef = useRef();
 
@@ -38,6 +34,7 @@ const OurCollaborations = () => {
    box2Ref.current.addEventListener('click', handleClick2);
 
    box3Ref.current.addEventListener('click', handleClick3);
+
     video1Ref.current.play();
 
     video2Ref.current.pause();
@@ -54,7 +51,7 @@ const OurCollaborations = () => {
       })
 
        gsap.to(".inner-container1 h1",{
-        opacity: 1,
+        opacity:1,
         duration:0.2,
       })
 
@@ -69,7 +66,7 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container2",{
-      width:"17vw",
+      width:"15vw",
       duration:0.2,  
       })
 
@@ -89,7 +86,7 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container3",{
-        width:"17vw",
+        width:"15vw",
         duration:0.2,  
         })
   
@@ -132,7 +129,7 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container1",{
-      width:"17vw",
+      width:"15vw",
       duration:0.2,  
       })
 
@@ -152,7 +149,7 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container3",{
-        width:"17vw",
+        width:"15vw",
         duration:0.2,  
         })
   
@@ -195,17 +192,17 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container1",{
-      width:"17vw",
+      width:"15vw",
       duration:0.2,  
       })
 
       gsap.to(".inner-container1 h1",{
-        scale:0,
+        opacity:0,
         duration:0.2,  
         })
 
       gsap.to(".inner-container1 h3",{
-          scale:0,
+          opacity:0,
           duration:0.2,  
           })
 
@@ -215,7 +212,7 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container2",{
-        width:"17vw",
+        width:"15vw",
         duration:0.2,  
         })
   
@@ -267,18 +264,6 @@ const OurCollaborations = () => {
     }
   }
 
-  useGSAP(()=>{
-    gsap.from(".h2", {
-      y: -100,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: "#Collabs",
-        start: "top 90%",
-        end: "top 60%",
-        scrub: 1,
-      },
-    })
-  })
 
 
 useGSAP(() => {
@@ -287,6 +272,8 @@ useGSAP(() => {
   duartion: 0.7,
   y:30,
   })
+
+    
 
   gsap.from(playRef.current,{
     x:40,
@@ -313,14 +300,13 @@ useGSAP(() => {
 
 
   return (
-    <div className='w-full overflow-hidden section-padding ' id='Collabs'>
-      <h2 className='h2  text-4xl lg:text-5xl font-extrabold capitalize border-b-2 pb-4 w-full lg:w-fit mb-10'><span className='text-primary'>Our</span> collaborations</h2>
-      <div className='container mg:w-screen h-screen rounded-[32px] gap-5 md:gap-12 lg:gap-12 flex'>
+    <div className='w-full overflow-hidden section-padding'>
+      <div className='h-screen rounded-[32px] gap-5 md:gap-12 lg:gap-8 flex'>
 
       {/* container 1 */}
        <div ref={box1Ref} className="inner-container1 w-[54vw] flex flex-col md:justify-around">
         <div className="headings1 h-[20vh]">
-        <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl'>Pepsi <span className='text-secondary'>Collabs</span></h1>
+        <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl'>Pepsi Collabs</h1>
         <h3 className='font-normal text-base md:text-sm lg:text-lg mb-5'>Ft. Ranveer Singh</h3>
         </div>
 
@@ -334,9 +320,9 @@ useGSAP(() => {
        </div>
 
       {/* container 2 */}
-       <div ref={box2Ref} className="inner-container2 w-[17vw] flex flex-col md:justify-around">
+       <div ref={box2Ref} className="inner-container2 w-[15vw] flex flex-col md:justify-around">
        <div className="headings2 h-[20vh]">
-        <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl opacity-0'>Pepsi <span className='text-secondary'>Collabs</span></h1>
+        <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl opacity-0'>Pepsi Collabs</h1>
         <h3 className='font-normal text-base md:text-sm lg:text-lg opacity-0 mb-5'>Ft. Naseem Shah</h3>
         </div>
 
@@ -349,10 +335,10 @@ useGSAP(() => {
         </div>
 
       {/* container 3 */}
-        <div ref={box3Ref} className="inner-container3 flex-col w-[17vw] md:justify-around hidden lg:flex">
+        <div ref={box3Ref} className="inner-container3 flex-col w-[15vw] md:justify-around hidden lg:flex">
 
         <div className="headings3 h-[20vh]">
-        <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl opacity-0'>Pepsi <span className='text-secondary'>Collabs</span></h1>
+        <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl opacity-0'>Pepsi Collabs</h1>
         <h3 className='font-normal text-base md:text-sm lg:text-lg opacity-0'>Ft. Maya Ali</h3>
         </div>
 
