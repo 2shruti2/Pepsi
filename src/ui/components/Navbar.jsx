@@ -4,7 +4,7 @@ import { useState } from "react";
 import { MdOutlineMenu } from "react-icons/md";
 import { MdOutlineClose } from "react-icons/md";
 
-const Navbar = ({logo}) => {
+const Navbar = ({ logo }) => {
   const [sideBar, setSideBar] = useState(false);
 
   useGSAP(() => {
@@ -20,7 +20,6 @@ const Navbar = ({logo}) => {
       delay: 1,
       duration: 0.9,
     });
-    
   });
 
   useGSAP(() => {
@@ -39,25 +38,29 @@ const Navbar = ({logo}) => {
   }, [sideBar]);
 
   return (
-    <nav className="w-full px-10 py-4 flex justify-between relative select-none">
+    <nav className="w-11/12 container mx-auto px-10 py-4 flex  relative select-none ">
       {/* logo */}
-      <div className="logo w-[10%] flex justify-center items-center">
-      <img src={logo} alt="" className=" hidden lg:flex w-[5.5rem] h-12" sizes="16px"/>
-      <span className="lg:hidden">pepsi</span>
+      <div className="logo absolute lg:static top-4 left-0 w-[25%] lg:w-[10%] flex justify-center items-center ">
+        <img
+          src={logo}
+          alt=""
+          className="  lg:flex w-28 md:w-[5.5rem] h-11 lg:h-12"
+        />
+        {/* <span className="lg:hidden">pepsi</span> */}
       </div>
 
       {/* links */}
-      <div className="hidden w-4/5 lg:flex justify-center lg:justify-end gap-6 py-4 ">
-      
+      <div className="hidden w-4/5 lg:flex justify-center lg:justify-end gap-6 py-4  ">
         {[
           { title: "Home", nav: "#Home" },
           { title: "Products", nav: "#Products" },
           { title: "About", nav: "#About" },
+          { title: "Contact", nav: "#Contact" },
         ].map((item) => {
           return (
             <span
               key={item.title}
-              className="inline-block nav1 cursor-pointer text-sm md:text-base"
+              className="inline-block nav1 cursor-pointer text-sm md:text-base "
             >
               <a href={item.nav}>{item.title}</a>
             </span>
@@ -66,7 +69,7 @@ const Navbar = ({logo}) => {
       </div>
 
       {/* menu  */}
-      <div className=" w-[10%]  flex items-center">
+      <div className=" w-[10%]  flex items-center fixed right-8 top-4 z-50">
         {/* <button className="shop w-fit h-hit px-2 py-1 rounded-lg hidden lg:flex lg:text-base cursor-pointer hover:bg-black bg-gray-800  hover:scale-110">
           Shop Now
         </button> */}
@@ -82,7 +85,7 @@ const Navbar = ({logo}) => {
 
       {/* sidebar  */}
       {sideBar && (
-        <div className="sideBar  w-[45%] h-screen absolute top-0 right-0 bg-black flex flex-col gap-4 px-4 md:px-8 py-4 z-50">
+        <div className="sideBar w-[45%] h-screen fixed top-0 right-0 bg-black flex flex-col gap-4 px-4 md:px-8 py-4 z-50">
           <button
             onClick={() => {
               setSideBar(!sideBar);
@@ -92,19 +95,27 @@ const Navbar = ({logo}) => {
             <MdOutlineClose size={25} />
           </button>
           {[
-          { title: "Home", nav: "#Home" },
-          { title: "Products", nav: "#Products" },
-          { title: "About", nav: "#About" },
-        ].map((item) => {
-          return (
-            <span
-              key={item.title}
-              className="inline-block nav cursor-pointer text-sm md:text-lg"
-            >
-              <a href={item.nav}>{item.title}</a>
-            </span>
-          );
-        })}
+            { title: "Home", nav: "#Home" },
+            { title: "Products", nav: "#Products" },
+            { title: "About", nav: "#About" },
+            { title: "Contact", nav: "#Contact" },
+          ].map((item) => {
+            return (
+              <span
+                key={item.title}
+                className="inline-block nav cursor-pointer text-sm md:text-lg"
+              >
+                <a
+                  onClick={() => {
+                    setSideBar(!sideBar);
+                  }}
+                  href={item.nav}
+                >
+                  {item.title}
+                </a>
+              </span>
+            );
+          })}
         </div>
       )}
     </nav>
