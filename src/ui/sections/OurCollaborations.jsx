@@ -5,6 +5,9 @@ import gsap from 'gsap'
 import video1 from '../../assets/video1.mp4'
 import video2 from '../../assets/video2.mp4'
 import video3 from '../../assets/video3.mp4'
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const OurCollaborations = () => {
 
@@ -298,10 +301,23 @@ useGSAP(() => {
   })
 })
 
+useGSAP(()=>{
+  gsap.from(".h2", {
+    y: -100,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: "#Collabs",
+      start: "top 90%",
+      end: "top 60%",
+      scrub: 1,
+    },
+  })
+})
 
   return (
-    <div className='w-full overflow-hidden section-padding'>
-      <div className='h-screen rounded-[32px] gap-5 md:gap-12 lg:gap-8 flex'>
+    <div className='w-full overflow-hidden section-padding' id='Collabs'>
+      <h2 className='h2  text-4xl lg:text-5xl font-extrabold capitalize  pb-4 lg:w-fit mb-10'><span className='text-primary'>Our</span> collaborations</h2>
+      <div className='h-screen rounded-[32px] gap-2 md:gap-12 lg:gap-8 flex'>
 
       {/* container 1 */}
        <div ref={box1Ref} className="inner-container1 w-[54vw] flex flex-col md:justify-around">
