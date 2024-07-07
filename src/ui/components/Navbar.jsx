@@ -1,10 +1,10 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useState } from "react";
+import { useState } from "react";
 import { MdOutlineMenu } from "react-icons/md";
 import { MdOutlineClose } from "react-icons/md";
 
-const Navbar = () => {
+const Navbar = ({logo}) => {
   const [sideBar, setSideBar] = useState(false);
 
   useGSAP(() => {
@@ -20,12 +20,7 @@ const Navbar = () => {
       delay: 1,
       duration: 0.9,
     });
-    gsap.from(".shop", {
-      opacity: 0,
-      x: 10,
-      delay: 1,
-      duration: 0.9,
-    });
+    
   });
 
   useGSAP(() => {
@@ -42,25 +37,27 @@ const Navbar = () => {
       duration: 0.6,
     });
   }, [sideBar]);
+
   return (
     <nav className="w-full px-10 py-4 flex justify-between relative select-none">
       {/* logo */}
-      <div className="logo  w-[10%] flex justify-center items-center">
-        pepsi
+      <div className="logo w-[10%] flex justify-center items-center">
+      <img src={logo} alt="" className=" hidden lg:flex w-[5.5rem] h-12" sizes="16px"/>
+      <span className="lg:hidden">pepsi</span>
       </div>
 
       {/* links */}
-      <div className="hidden w-4/5 lg:flex justify-center gap-6 py-4 ">
+      <div className="hidden w-4/5 lg:flex justify-center lg:justify-end gap-6 py-4 ">
+      
         {[
           { title: "Home", nav: "#Home" },
           { title: "Products", nav: "#Products" },
-          { title: "Contact", nav: "#Contact" },
           { title: "About", nav: "#About" },
         ].map((item) => {
           return (
             <span
-              key={item}
-              className="inline-block nav1 cursor-pointer text-sm md:text-lg"
+              key={item.title}
+              className="inline-block nav1 cursor-pointer text-sm md:text-base"
             >
               <a href={item.nav}>{item.title}</a>
             </span>
@@ -70,9 +67,9 @@ const Navbar = () => {
 
       {/* menu  */}
       <div className=" w-[10%]  flex items-center">
-        <button className="shop w-fit h-hit px-2 py-1 rounded-lg hidden lg:flex lg:text-base cursor-pointer hover:bg-black bg-gray-800  hover:scale-110">
+        {/* <button className="shop w-fit h-hit px-2 py-1 rounded-lg hidden lg:flex lg:text-base cursor-pointer hover:bg-black bg-gray-800  hover:scale-110">
           Shop Now
-        </button>
+        </button> */}
         <button
           onClick={() => {
             setSideBar(!sideBar);
@@ -85,7 +82,7 @@ const Navbar = () => {
 
       {/* sidebar  */}
       {sideBar && (
-        <div className="sideBar  w-[45%] h-screen absolute top-0 right-0 bg-black flex flex-col gap-4 px-4 md:px-8 py-4 z-20">
+        <div className="sideBar  w-[45%] h-screen absolute top-0 right-0 bg-black flex flex-col gap-4 px-4 md:px-8 py-4 z-50">
           <button
             onClick={() => {
               setSideBar(!sideBar);
@@ -97,12 +94,11 @@ const Navbar = () => {
           {[
           { title: "Home", nav: "#Home" },
           { title: "Products", nav: "#Products" },
-          { title: "Contact", nav: "#Contact" },
           { title: "About", nav: "#About" },
         ].map((item) => {
           return (
             <span
-              key={item}
+              key={item.title}
               className="inline-block nav cursor-pointer text-sm md:text-lg"
             >
               <a href={item.nav}>{item.title}</a>

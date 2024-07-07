@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import Hero from "./ui/sections/Hero";
-import OurProducts from "./ui/sections/OurProducts";
 import AnimatedLoadaer from "./ui/components/Hero/AnimatedLoadaer";
 import Navbar from "./ui/components/Navbar";
 import OurCollaborations from "./ui/sections/OurCollaborations";
 import Footer from "./ui/components/Footer";
 import About from "./ui/sections/About";
+import Discover from "./ui/sections/Discover";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -29,16 +29,16 @@ function App() {
       )}
       {!loading && (
         <main>
-          Your main website content
-          <Navbar />
+          {/* Your main website content */}
+          <Navbar logo={"assets/HeroSection/Pepsi-Logo.png"}/>
           <Hero
-            image1={"assets/HeroSection/lady2.jpg"}
-            image2={"assets/HeroSection/canp.jpg"}
-            image3={"assets/HeroSection/lady.jpg"}
+            image1={"assets/HeroSection/lady2.webp"}
+            image2={"assets/HeroSection/canp.webp"}
+            image3={"assets/HeroSection/lady.webp"}
           />
           <About/>
           <OurCollaborations/>
-          <OurProducts />
+          <Discover/>
           <Footer/>
         </main>
       )}
