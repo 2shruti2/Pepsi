@@ -24,9 +24,9 @@ const OurCollaborations = () => {
 
   const [isPlay1,setIsPlay1] = useState(true);
 
-  const [isPlay2,setIsPlay2] = useState(true);
+  const [isPlay2,setIsPlay2] = useState(false);
 
-  const [isPlay3,setIsPlay3] = useState(true);
+  const [isPlay3,setIsPlay3] = useState(false);
 
   useEffect(() => {
    box1Ref.current.addEventListener('click', handleClick1);
@@ -34,18 +34,23 @@ const OurCollaborations = () => {
    box2Ref.current.addEventListener('click', handleClick2);
 
    box3Ref.current.addEventListener('click', handleClick3);
+    video1Ref.current.play();
+
+    video2Ref.current.pause();
+
+    video3Ref.current.pause();
 
   },[])
 
   const handleClick1 = () => {
 
-      gsap.to(".box1",{
-        width:"53vw",
+      gsap.to(".inner-container1",{
+        width:"54vw",
         duration:0.2,
       })
 
        gsap.to(".inner-container1 h1",{
-        opacity:1,
+        opacity: 1,
         duration:0.2,
       })
 
@@ -59,8 +64,8 @@ const OurCollaborations = () => {
         duration:0.2,
       })
 
-      gsap.to(".box2",{
-      width:"15vw",
+      gsap.to(".inner-container2",{
+      width:"17vw",
       duration:0.2,  
       })
 
@@ -79,8 +84,8 @@ const OurCollaborations = () => {
         duration:0.2,
       })
 
-      gsap.to(".box3",{
-        width:"15vw",
+      gsap.to(".inner-container3",{
+        width:"17vw",
         duration:0.2,  
         })
   
@@ -102,8 +107,8 @@ const OurCollaborations = () => {
 
   const handleClick2 = () => {
 
-      gsap.to(".box2",{
-        width:"53vw",
+      gsap.to(".inner-container2",{
+        width:"54vw",
         duration:0.2,
       })
 
@@ -122,8 +127,8 @@ const OurCollaborations = () => {
         duration:0.2,
       })
 
-      gsap.to(".box1",{
-      width:"15vw",
+      gsap.to(".inner-container1",{
+      width:"17vw",
       duration:0.2,  
       })
 
@@ -142,8 +147,8 @@ const OurCollaborations = () => {
         duration:0.2,
       })
 
-      gsap.to(".box3",{
-        width:"15vw",
+      gsap.to(".inner-container3",{
+        width:"17vw",
         duration:0.2,  
         })
   
@@ -165,8 +170,8 @@ const OurCollaborations = () => {
 
   const handleClick3 = () => {
 
-      gsap.to(".box3",{
-        width:"53vw",
+      gsap.to(".inner-container3",{
+        width:"54vw",
         duration:0.2,
       })
 
@@ -185,18 +190,18 @@ const OurCollaborations = () => {
         duration:0.2,
       })
 
-      gsap.to(".box1",{
-      width:"15vw",
+      gsap.to(".inner-container1",{
+      width:"17vw",
       duration:0.2,  
       })
 
       gsap.to(".inner-container1 h1",{
-        opacity:0,
+        scale:0,
         duration:0.2,  
         })
 
       gsap.to(".inner-container1 h3",{
-          opacity:0,
+          scale:0,
           duration:0.2,  
           })
 
@@ -205,8 +210,8 @@ const OurCollaborations = () => {
         duration:0.2,
       })
 
-      gsap.to(".box2",{
-        width:"15vw",
+      gsap.to(".inner-container2",{
+        width:"17vw",
         duration:0.2,  
         })
   
@@ -294,31 +299,33 @@ useGSAP(() => {
 
 
   return (
-    <div className='w-full  md:mb-10 overflow-hidden'>
-      <div className='container mg:w-screen px-7 py-8 md:pl-6 md:pr-7 md:ml-5 lg:py-8 lg:pl-3 lg:pr-8 lg:ml-7 bg-black h-screen rounded-[32px] gap-8 md:gap-5 lg:gap-6 flex justify-around'>
+    <div className='w-full overflow-hidden section-padding'>
+      <div className='container mg:w-screen h-screen rounded-[32px] gap-5 md:gap-12 lg:gap-12 flex'>
 
-       <div ref={box1Ref} className="inner-container1 flex flex-col md:justify-around">
+      {/* container 1 */}
+       <div ref={box1Ref} className="inner-container1 w-[54vw] flex flex-col md:justify-around">
         <div className="headings1 h-[20vh]">
         <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl'>Pepsi Collabs</h1>
-        <h3 className='font-normal text-base md:text-sm lg:text-lg mb-5'>Ft. Maya Ali</h3>
+        <h3 className='font-normal text-base md:text-sm lg:text-lg mb-5'>Ft. Ranveer Singh</h3>
         </div>
 
-          <div className='box1 h-[60vh] md:h-[68vh] bg-gray-900 w-[53vw] border border-secondary rounded-3xl relative overflow-hidden'>
+          <div className='box1 h-[60vh] md:h-[68vh] border rounded-3xl relative overflow-hidden'>
 
-            <video ref={video1Ref} className="h-full w-full object-none rounded-3xl" src={video2} autoPlay loop muted/>
+            <video ref={video1Ref} className="h-full w-full object-none rounded-3xl" src={video1} autoPlay loop muted/>
 
         <button className='px-2 md:px-3 lg:px-5 py-2 md:py-3 lg:py-5 border rounded-full  bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center items-center font-normal' onClick={buttonClick1}>{isPlay1 ? <PauseIcon ref={playRef} className='text-black size-7 md:size-10'/> : <PlayIcon ref={playRef} className='text-black size-7 md:size-10 pl-1'/>}</button>   
                
         </div>
        </div>
 
-       <div ref={box2Ref} className="inner-container2 flex flex-col md:justify-around">
+      {/* container 2 */}
+       <div ref={box2Ref} className="inner-container2 w-[17vw] flex flex-col md:justify-around">
        <div className="headings2 h-[20vh]">
         <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl opacity-0'>Pepsi Collabs</h1>
         <h3 className='font-normal text-base md:text-sm lg:text-lg opacity-0 mb-5'>Ft. Naseem Shah</h3>
         </div>
 
-        <div className='box2 h-[60vh] md:h-[68vh] bg-gray-900 w-[15vw] border border-secondary rounded-3xl relative overflow-hidden'>
+        <div className='box2 h-[60vh] md:h-[68vh] border rounded-3xl relative overflow-hidden'>
 
            <video ref={video2Ref} className="h-full w-full object-none" src={video3} autoPlay loop muted/>
 
@@ -326,16 +333,17 @@ useGSAP(() => {
         </div>
         </div>
 
-        <div ref={box3Ref} className="inner-container3 flex-col md:justify-around hidden md:flex ">
+      {/* container 3 */}
+        <div ref={box3Ref} className="inner-container3 flex-col w-[17vw] md:justify-around hidden lg:flex">
 
         <div className="headings3 h-[20vh]">
         <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl opacity-0'>Pepsi Collabs</h1>
-        <h3 className='font-normal text-base md:text-sm lg:text-lg opacity-0'>Ft. Ranveer Singh</h3>
+        <h3 className='font-normal text-base md:text-sm lg:text-lg opacity-0'>Ft. Maya Ali</h3>
         </div>
 
-        <div className='box3 h-[60vh] md:h-[68vh] bg-gray-900 w-[15vw] border border-secondary rounded-3xl relative overflow-hidden'>
+        <div className='box3 h-[60vh] md:h-[68vh] border rounded-3xl relative overflow-hidden'>
 
-           <video ref={video3Ref} className="h-full w-full object-none rounded-3xl" src={video1} autoPlay loop muted/>
+           <video ref={video3Ref} className="h-full w-full object-none rounded-3xl" src={video2} autoPlay loop muted/>
 
         <button className='px-2 md:px-3 lg:px-5 py-2 md:py-3 lg:py-5 border rounded-full bg-white text-black absolute bottom-7 right-6 text-2xl flex justify-center font-normal scale-0' onClick={buttonClick3}>{isPlay3 ? <PauseIcon ref={playRef} className='text-black size-10'/> : <PlayIcon ref={playRef} className='text-black size-10 pl-1'/>}</button>
         </div>
