@@ -45,10 +45,10 @@ const Footer = () => {
     { title: "About", nav: "#About" },
   ];
   return (
-    <div className="w-full h-80 overflow-hidden relative">
+    <div className="w-full h-60 overflow-hidden relative ">
       <div
         id="footer"
-        className=" w-full bg-black rounded-3xl px-10 py-4 flex flex-col select-none absolute bottom-0 left-1/2 -translate-x-1/2 "
+        className=" w-full rounded-3xl px-10 py-4 flex flex-col select-none absolute bottom-0 left-1/2 -translate-x-1/2 "
       >
         <div className="w-full flex justify-center gap-2">
           {aarr.map((links, index) => {
@@ -66,7 +66,7 @@ const Footer = () => {
           {arr.map((link, index) => {
             return (
               <span key={index} className="text-xs md:text-sm  ">
-                <a href={link.nav} target="_blank">
+                <a href={link.nav}>
                   {link.title}
                 </a>{" "}
               </span>

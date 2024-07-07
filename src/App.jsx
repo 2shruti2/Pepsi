@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import Hero from "./ui/sections/Hero";
-import OurProducts from "./ui/sections/OurProducts";
 import AnimatedLoadaer from "./ui/components/Hero/AnimatedLoadaer";
 import Navbar from "./ui/components/Navbar";
 import OurCollaborations from "./ui/sections/OurCollaborations";
 import Footer from "./ui/components/Footer";
 import About from "./ui/sections/About";
-import Contact from "./ui/sections/Contact";
+import Discover from "./ui/sections/Discover";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -37,11 +36,10 @@ function App() {
             image2={"assets/HeroSection/canp.webp"}
             image3={"assets/HeroSection/lady.webp"}
           />
-          <About />
-          <OurCollaborations />
-          <OurProducts />
-          <Contact />
-          <Footer />
+          <About/>
+          <OurCollaborations/>
+          <Discover/>
+          <Footer/>
         </main>
       )}
     </div>
