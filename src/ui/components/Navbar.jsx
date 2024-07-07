@@ -7,19 +7,21 @@ import { MdOutlineClose } from "react-icons/md";
 const Navbar = ({ logo }) => {
   const [sideBar, setSideBar] = useState(false);
 
+
+
   useGSAP(() => {
     gsap.from(".nav1", {
       opacity: 0,
       y: 10,
       delay: 1,
       stagger: 0.5,
-    });
+    })
     gsap.from(".logo", {
       opacity: 0,
       x: -10,
       delay: 1,
       duration: 0.9,
-    });
+    })
   });
 
   useGSAP(() => {
@@ -28,14 +30,15 @@ const Navbar = ({ logo }) => {
       y: 10,
       delay: 0.3,
       stagger: 0.2,
-    });
+    })
     gsap.from(".sideBar", {
       opacity: 0,
       width: 0,
       delay: 0.3,
       duration: 0.6,
-    });
+    })
   }, [sideBar]);
+
 
   return (
     <nav className="w-11/12 container mx-auto px-10 py-4 flex  relative select-none ">
@@ -60,9 +63,9 @@ const Navbar = ({ logo }) => {
           return (
             <span
               key={item.title}
-              className="inline-block nav1 cursor-pointer text-sm md:text-base "
+              className="inline-block nav1 cursor-pointer text-sm md:text-base hover:border-b-2 "
             >
-              <a href={item.nav}>{item.title}</a>
+              <a href={item.nav} >{item.title}</a>
             </span>
           );
         })}
@@ -103,7 +106,7 @@ const Navbar = ({ logo }) => {
             return (
               <span
                 key={item.title}
-                className="inline-block nav cursor-pointer text-sm md:text-lg"
+                className="inline-block nav cursor-pointer text-sm md:text-lg w-fit hover:border-b-2"
               >
                 <a
                   onClick={() => {

@@ -2,9 +2,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
+// import ScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const Discover = () => {
 
@@ -42,11 +42,25 @@ const Discover = () => {
     );
   });
 
+  // useGSAP(()=>{
+  //   gsap.from(".hup", {
+  //     y: "-100",
+  //     opacity: 0,
+  //     scrollTrigger: {
+  //       trigger: "#Discover",
+  //       start: "top 90%",
+  //       end: "top 60%",
+  //       scrub: 1,
+  //       markers: true
+  //     },
+  //   })
+  // })
+
+
   return (
-    <div className="w-full h-full section-padding">
-      <h1 id="para" className=" text-lg md:text-3xl lg:text-4xl capitalize font-bold">Discover our products</h1>
-    <div className="w-full h-full">
-      <h1 id="para" className=" px-10 py-4 sm:px-7 sm:py-7 text-lg md:text-3xl lg:text-4xl capitalize font-bold"><span className="text-primary">Discover</span> our <span className="text-secondary">products</span> </h1>
+    <div className="w-full h-full section-padding overflow-hidden" id="Discover">
+          
+      <h1 id="para" className="hup w-full lg:w-fit px-10 py-4 sm:px-0 sm:py-4 ml-3 mb-5 lg:border-b-2 text-4xl md:text-3xl lg:text-5xl capitalize font-bold "><span className="text-primary">Discover</span> our products </h1>
       <div className="embla" ref={emblaRef}>
         <div className="embla__container w-[95%] sm:w-[55%] h-[140%] sm:h-[60%] py-4 sm:py-7 ">
           {slides.map((slide, i) => (
