@@ -6,8 +6,10 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Contact = () => {
-  gsap.registerPlugin(ScrollTrigger);
+  
 
   useGSAP(() => {
     gsap.from(".ch", {
@@ -15,8 +17,8 @@ const Contact = () => {
       opacity: 0,
       scrollTrigger: {
         trigger: "#Contact",
-        start: "top 30%",
-        end: "top 15%",
+        start: "top 90%",
+        end: "top 30%",
         scrub: 1,
       },
     });
@@ -25,8 +27,8 @@ const Contact = () => {
       opacity: 0,
       scrollTrigger: {
         trigger: "#Contact",
-        start: "top 30%",
-        end: "top 15%",
+        start: "top 90%",
+        end: "top 30%",
         scrub: 1,
       },
     });
@@ -35,9 +37,10 @@ const Contact = () => {
       opacity: 0,
       scrollTrigger: {
         trigger: "#Contact",
-        start: "top 30%",
-        end: "top 15%",
+        start: "top 90%",
+        end: "top 30%",
         scrub: 1,
+        // markers:true
       },
     });
   });

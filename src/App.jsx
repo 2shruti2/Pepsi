@@ -37,8 +37,8 @@ function App() {
             image2={"assets/HeroSection/canp.webp"}
             image3={"assets/HeroSection/lady.webp"}
           />
-          <About/>
           <OurCollaborations/>
+          <About/>
           <Discover/>
           <Contact/>
           <Footer/>
