@@ -43,8 +43,8 @@ const Discover = () => {
   });
 
   return (
-    <div className="w-full h-full">
-      <h1 id="para" className=" px-7 py-4 sm:px-7 sm:py-7 text-lg md:text-3xl lg:text-4xl capitalize font-bold">Discover our products</h1>
+    <div className="w-full h-full section-padding">
+      <h1 id="para" className=" text-lg md:text-3xl lg:text-4xl capitalize font-bold">Discover our products</h1>
       <div className="embla" ref={emblaRef}>
         <div className="embla__container w-[95%] sm:w-[55%] h-[140%] sm:h-[60%] py-4 sm:py-7">
           {slides.map((slide, i) => (
