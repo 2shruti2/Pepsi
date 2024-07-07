@@ -43,6 +43,8 @@ const Discover = () => {
   });
 
   return (
+    <div className="w-full h-full section-padding">
+      <h1 id="para" className=" text-lg md:text-3xl lg:text-4xl capitalize font-bold">Discover our products</h1>
     <div className="w-full h-full">
       <h1 id="para" className=" px-10 py-4 sm:px-7 sm:py-7 text-lg md:text-3xl lg:text-4xl capitalize font-bold"><span className="text-primary">Discover</span> our <span className="text-secondary">products</span> </h1>
       <div className="embla" ref={emblaRef}>
