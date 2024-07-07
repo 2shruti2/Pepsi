@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import video from "../../assets/A-Pepsi.mp4";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -9,6 +9,8 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = ({ image1, image2, image3 }) => {
   const tlFeatures = gsap.timeline();
   const tl = gsap.timeline();
+
+  const videobox = useRef()
 
   useGSAP(() => {
     tl.from(".img", {
@@ -58,6 +60,25 @@ const Hero = ({ image1, image2, image3 }) => {
     });
   });
 
+
+  useEffect(()=>{
+    console.log(videobox.current) 
+    videobox.current.addEventListener('mouseenter' , function(){
+      console.log("yo prashant")
+      gsap.to(".video",{
+        scale: 1.5,
+        duration:0.4
+      })
+    })
+    videobox.current.addEventListener('mouseleave' , function(){
+      console.log("yo prashant")
+      gsap.to(".video",{
+        scale: 1,
+        duration:0.6
+      })
+    })
+  },[])
+
   return (
     <div
       id="Home"
@@ -94,7 +115,7 @@ const Hero = ({ image1, image2, image3 }) => {
         </div>
 
         {/* video div  */}
-        <div className="video absolute  hidden lg:flex w-56 h-32  rounded-xl overflow-hidden bottom-[20%] -left-[110%] bg-black">
+        <div ref={videobox} className="video absolute  hidden lg:flex w-56 h-32  rounded-xl overflow-hidden bottom-[20%] -left-[110%] bg-black">
           <video src={video} muted autoPlay loop className=" w-full h-full"></video>
         </div>
 

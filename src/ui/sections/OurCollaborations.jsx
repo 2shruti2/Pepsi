@@ -34,6 +34,7 @@ const OurCollaborations = () => {
    box2Ref.current.addEventListener('click', handleClick2);
 
    box3Ref.current.addEventListener('click', handleClick3);
+
     video1Ref.current.play();
 
     video2Ref.current.pause();
@@ -50,7 +51,7 @@ const OurCollaborations = () => {
       })
 
        gsap.to(".inner-container1 h1",{
-        opacity: 1,
+        opacity:1,
         duration:0.2,
       })
 
@@ -65,7 +66,7 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container2",{
-      width:"17vw",
+      width:"15vw",
       duration:0.2,  
       })
 
@@ -85,7 +86,7 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container3",{
-        width:"17vw",
+        width:"15vw",
         duration:0.2,  
         })
   
@@ -128,7 +129,7 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container1",{
-      width:"17vw",
+      width:"15vw",
       duration:0.2,  
       })
 
@@ -148,7 +149,7 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container3",{
-        width:"17vw",
+        width:"15vw",
         duration:0.2,  
         })
   
@@ -191,17 +192,17 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container1",{
-      width:"17vw",
+      width:"15vw",
       duration:0.2,  
       })
 
       gsap.to(".inner-container1 h1",{
-        scale:0,
+        opacity:0,
         duration:0.2,  
         })
 
       gsap.to(".inner-container1 h3",{
-          scale:0,
+          opacity:0,
           duration:0.2,  
           })
 
@@ -211,7 +212,7 @@ const OurCollaborations = () => {
       })
 
       gsap.to(".inner-container2",{
-        width:"17vw",
+        width:"15vw",
         duration:0.2,  
         })
   
@@ -300,7 +301,7 @@ useGSAP(() => {
 
   return (
     <div className='w-full overflow-hidden section-padding'>
-      <div className='container mg:w-screen h-screen rounded-[32px] gap-5 md:gap-12 lg:gap-12 flex'>
+      <div className='h-screen rounded-[32px] gap-5 md:gap-12 lg:gap-8 flex'>
 
       {/* container 1 */}
        <div ref={box1Ref} className="inner-container1 w-[54vw] flex flex-col md:justify-around">
@@ -319,7 +320,7 @@ useGSAP(() => {
        </div>
 
       {/* container 2 */}
-       <div ref={box2Ref} className="inner-container2 w-[17vw] flex flex-col md:justify-around">
+       <div ref={box2Ref} className="inner-container2 w-[15vw] flex flex-col md:justify-around">
        <div className="headings2 h-[20vh]">
         <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl opacity-0'>Pepsi Collabs</h1>
         <h3 className='font-normal text-base md:text-sm lg:text-lg opacity-0 mb-5'>Ft. Naseem Shah</h3>
@@ -334,7 +335,7 @@ useGSAP(() => {
         </div>
 
       {/* container 3 */}
-        <div ref={box3Ref} className="inner-container3 flex-col w-[17vw] md:justify-around hidden lg:flex">
+        <div ref={box3Ref} className="inner-container3 flex-col w-[15vw] md:justify-around hidden lg:flex">
 
         <div className="headings3 h-[20vh]">
         <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl opacity-0'>Pepsi Collabs</h1>
