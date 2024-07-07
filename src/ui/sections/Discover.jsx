@@ -44,12 +44,12 @@ const Discover = () => {
 
   return (
     <div className="w-full h-full">
-      <h1 id="para" className=" px-7 py-4 sm:px-7 sm:py-7 text-lg md:text-3xl lg:text-4xl capitalize font-bold">Discover our products</h1>
+      <h1 id="para" className=" px-10 py-4 sm:px-7 sm:py-7 text-lg md:text-3xl lg:text-4xl capitalize font-bold"><span className="text-primary">Discover</span> our <span className="text-secondary">products</span> </h1>
       <div className="embla" ref={emblaRef}>
-        <div className="embla__container w-[95%] sm:w-[55%] h-[140%] sm:h-[60%] py-4 sm:py-7">
+        <div className="embla__container w-[95%] sm:w-[55%] h-[140%] sm:h-[60%] py-4 sm:py-7 ">
           {slides.map((slide, i) => (
             <div
-              className="embla__slide rounded-3xl border-2 p-1 border-secondary mx-1 sm:mx-10 focus:scale-105 hover:scale-105 hover:shadow-2xl shadow-secondary"
+              className="embla__slide rounded-3xl border-2  border-secondary mx-1 sm:mx-10 focus:scale-105 hover:scale-105 hover:shadow-2xl shadow-secondary"
               key={i}
             >
               <img
