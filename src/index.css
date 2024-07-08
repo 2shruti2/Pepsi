@@ -131,3 +131,9 @@
   }
 
 }
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('./HarryTS.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}

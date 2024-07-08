@@ -15,8 +15,8 @@ const Footer = () => {
       opacity: 0,
       scrollTrigger: {
         trigger: "#footer",
-        start: "top 100%",
-        end: "top 50%",
+        start: "top 80%",
+        end: "top 64%",
         scrub: 3,
       },
     });
