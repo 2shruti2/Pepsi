@@ -84,14 +84,14 @@ const Hero = ({ image1, image2, image3 }) => {
       id="Home"
       className="h-screen px-10  flex justify-center items-center relative overflow-hidden select-none"
     >
-      <span className="MHstarting text-[6vmax] font-bold leading-[5.5rem] tracking-tighter absolute top-[5%] md:top-[30%] lg:top-[20%] md:left-[20%] lg:left-[10%] z-20">
+      <span className="MHstarting text-[6vmax] font-bold leading-[5.5rem] tracking-tighter absolute top-[10%] md:top-[30%] lg:top-[20%] md:left-[20%] lg:left-[10%] z-20">
         <span className="text-primary">Taste</span> the Thrill{" "}
       </span>
-      <span className="MHending text-[6vmax] font-bold leading-[5.5rem] tracking-tighter absolute top-[11%] md:top-[60%]  right-[32%] md:right-[25%]  z-20">
+      <span className="MHending text-[6vmax] font-bold leading-[5.5rem] tracking-tighter absolute top-[18%] md:top-[60%]  right-[32%] md:right-[25%]  z-20">
         {" "}
         of <span className="text-secondary">Now!</span>
       </span>
-      <div className="imageDiv w-[60%] md:w-[25%] h-[45vmax] md:h-[35vmax] rounded-lg  relative">
+      <div className="imageDiv w-[40%] md:w-[25%] lg:w-[22%] h-[40vmax] lg:h-[35vmax] rounded-lg absolute top-[37%]  md:top-[25%]  lg:top-[10%]">
         <div className="w-full h-full  absolute top-0 left-0 z-10">
           <img
             className="img w-full h-full rounded-lg object-cover rotate-[6deg] origin-bottom-right "

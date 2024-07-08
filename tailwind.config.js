@@ -13,6 +13,7 @@ export default {
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
+        HarryTS: ["HarryTS", "sans-serif"],
       },
     },
   },

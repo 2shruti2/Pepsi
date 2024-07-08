@@ -88,12 +88,12 @@ const Navbar = ({ logo }) => {
 
       {/* sidebar  */}
       {sideBar && (
-        <div className="sideBar w-[45%] h-screen fixed top-0 right-0 bg-black flex flex-col gap-4 px-4 md:px-8 py-4 z-50">
+        <div className="sideBar w-[45%] h-screen fixed top-0 right-0 bg-black flex flex-col gap-6 px-4 md:px-8 py-4 z-50">
           <button
             onClick={() => {
               setSideBar(!sideBar);
             }}
-            className="w-fit h-fit px-3 py-3  rounded-full cursor-pointer hover:bg-black bg-gray-900 hover:scale-110"
+            className="w-fit h-fit px-3 py-3 mb-5 rounded-full cursor-pointer hover:bg-black bg-gray-900 hover:scale-110"
           >
             <MdOutlineClose size={25} />
           </button>
@@ -106,7 +106,7 @@ const Navbar = ({ logo }) => {
             return (
               <span
                 key={item.title}
-                className="inline-block nav cursor-pointer text-sm md:text-lg w-fit hover:border-b-2"
+                className="inline-block nav cursor-pointer text-lg md:text-lg w-fit hover:border-b-2"
               >
                 <a
                   onClick={() => {

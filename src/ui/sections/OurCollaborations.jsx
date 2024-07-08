@@ -315,18 +315,18 @@ useGSAP(()=>{
 })
 
   return (
-    <div className='w-full overflow-hidden section-padding' id='Collabs'>
-      <h2 className='h2  text-4xl lg:text-5xl font-extrabold capitalize  pb-4 lg:w-fit mb-10'><span className='text-primary'>Our</span> collaborations</h2>
-      <div className='h-screen rounded-[32px] gap-7 md:gap-12 lg:gap-8 flex'>
+    <div className='w-full overflow-hidden section-padding ' id='Collabs'>
+      <h2 className='h2  text-4xl lg:text-5xl font-extrabold capitalize  pb-4 lg:w-fit mb-6'><span className='text-primary'>Our</span> collaborations</h2>
+      <div className=' lg:h-screen rounded-[32px] gap-7 md:gap-12 lg:gap-8 flex'>
 
       {/* container 1 */}
        <div ref={box1Ref} className="inner-container1 w-[54vw] flex flex-col md:justify-around">
         <div className="headings1 h-[20vh]">
         <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl'>Pepsi Collabs</h1>
-        <h3 className='font-normal text-base md:text-sm lg:text-lg mb-5'>Ft. Ranveer Singh</h3>
+        <h3 className='font-bold text-base md:text-sm lg:text-lg mb-5'><span className='text-primary'> Ft.</span> Ranveer Singh</h3>
         </div>
 
-          <div className='box1 h-[60vh] md:h-[68vh] border rounded-3xl relative overflow-hidden'>
+          <div className='box1 h-[50vh] md:h-[68vh] border rounded-3xl relative overflow-hidden'>
 
             <video ref={video1Ref} className="h-full w-full object-none rounded-3xl" src={video1} autoPlay loop muted/>
 
@@ -339,10 +339,10 @@ useGSAP(()=>{
        <div ref={box2Ref} className="inner-container2 w-[15vw] flex flex-col md:justify-around">
        <div className="headings2 h-[20vh]">
         <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl opacity-0'>Pepsi Collabs</h1>
-        <h3 className='font-normal text-base md:text-sm lg:text-lg opacity-0 mb-5'>Ft. Naseem Shah</h3>
+        <h3 className='font-bold text-base md:text-sm lg:text-lg opacity-0 mb-5'><span className='text-primary'>Ft.</span> Naseem Shah</h3>
         </div>
 
-        <div className='box2 h-[60vh] md:h-[68vh] border rounded-3xl relative overflow-hidden'>
+        <div className='box2 h-[50vh] md:h-[68vh] border rounded-3xl relative overflow-hidden'>
 
            <video ref={video2Ref} className="h-full w-full object-none" src={video3} autoPlay loop muted/>
 
@@ -355,10 +355,10 @@ useGSAP(()=>{
 
         <div className="headings3 h-[20vh]">
         <h1 className='font-bold mb-3 md:mb-5 text-lg md:text-3xl lg:text-5xl opacity-0'>Pepsi Collabs</h1>
-        <h3 className='font-normal text-base md:text-sm lg:text-lg opacity-0'>Ft. Maya Ali</h3>
+        <h3 className='font-bold text-base md:text-sm lg:text-lg opacity-0'><span className='text-primary'>Ft.</span> Maya Ali</h3>
         </div>
 
-        <div className='box3 h-[60vh] md:h-[68vh] border rounded-3xl relative overflow-hidden'>
+        <div className='box3 h-[50vh] md:h-[68vh] border rounded-3xl relative overflow-hidden'>
 
            <video ref={video3Ref} className="h-full w-full object-none rounded-3xl" src={video2} autoPlay loop muted/>
 

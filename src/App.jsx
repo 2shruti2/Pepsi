@@ -7,6 +7,7 @@ import Footer from "./ui/components/Footer";
 import About from "./ui/sections/About";
 import Discover from "./ui/sections/Discover";
 import Contact from "./ui/sections/Contact";
+import './index.css'
 
 function App() {
   const [loading, setLoading] = useState(true);
