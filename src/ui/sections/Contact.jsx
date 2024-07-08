@@ -71,14 +71,14 @@ const Contact = () => {
 
   return (
     <div className=" w-11/12 mx-auto p-4 relative overflow-hidden" id="Contact">
-      <span className=" ch  text-[6vmax] font-bold lg:font-semibold absolute top-0 lg:top-[-6%] left-[13%] lg:left-32">
+      <span className=" ch  text-[6vmax] font-bold lg:font-semibold absolute top-0 lg:top-[-6%] left-[10%] lg:left-32">
         <span className="text-primary">Get</span> in Touch{" "}
       </span>
       <span className="ch2 text-[7vmax] font-bold lg:font-semibold absolute top-14 lg:top-14 left-[25%] lg:left-[38%]">
         with <span className="text-secondary">Us</span>
       </span>
 
-      <div className=" flex flex-col lg:flex-row justify-center gap-2 mt-20 md:mt-40 lg:mt-52 w-full p-4 ">
+      <div className=" flex flex-col lg:flex-row justify-center gap-2 mt-36 md:mt-40 lg:mt-52 w-full p-4 ">
         <div className="info w-full lg:w-2/5  flex flex-col items-center lg:items-start gap-6 mt-4 text-sm">
           <p className="text-center lg:text-justify">
             WE'RE OPEN TO TALK TO GOOD PEOPLE. JUST SAY HELLO AND WE'LL START A
