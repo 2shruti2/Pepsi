@@ -1,7 +1,5 @@
-import { FaFacebook } from "react-icons/fa";
-import { IoLogoYoutube } from "react-icons/io";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { FaSquareXTwitter } from "react-icons/fa6";
+import React, { useRef, useEffect } from "react";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -9,7 +7,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
-  
+  const formRef = useRef(null);
+  const socialIconsRef = useRef(null);
 
   useGSAP(() => {
     gsap.from(".ch", {
@@ -33,7 +32,7 @@ const Contact = () => {
       },
     });
     gsap.from(".form", {
-      x: 100,
+      y: 50,
       opacity: 0,
       scrollTrigger: {
         trigger: "#Contact",
@@ -43,7 +42,7 @@ const Contact = () => {
       },
     });
     gsap.from(".info", {
-      x: -100,
+      y: 50,
       opacity: 0,
       scrollTrigger: {
         trigger: "#Contact",
@@ -53,87 +52,102 @@ const Contact = () => {
       },
     });
   });
-  const aarr = [
-    {
-      icon: <FaFacebook size={25} />,
-      url: "https://www.facebook.com/PepsiIndia/?brand_redir=56381779049",
-    },
-    {
-      icon: <IoLogoYoutube size={25} />,
-      url: "https://www.youtube.com/user/Pepsi",
-    },
-    {
-      icon: <FaSquareInstagram size={25} />,
-      url: "https://www.instagram.com/pepsi",
-    },
-    { icon: <FaSquareXTwitter size={25} />, url: "https://x.com/pepsi" },
+
+  useEffect(() => {
+    const inputs = formRef.current.querySelectorAll("input, textarea");
+    inputs.forEach((input) => {
+      input.addEventListener("focus", () => {
+        gsap.to(input, { scale: 1.05, duration: 0.3, ease: "power2.out" });
+      });
+      input.addEventListener("blur", () => {
+        gsap.to(input, { scale: 1, duration: 0.3, ease: "power2.out" });
+      });
+    });
+
+    const socialIcons = socialIconsRef.current.querySelectorAll("a");
+    socialIcons.forEach((icon) => {
+      icon.addEventListener("mouseenter", () => {
+        gsap.to(icon, { y: -5, duration: 0.3, ease: "power2.out" });
+      });
+      icon.addEventListener("mouseleave", () => {
+        gsap.to(icon, { y: 0, duration: 0.3, ease: "power2.out" });
+      });
+    });
+  }, []);
+
+  const socialLinks = [
+    { icon: <FaFacebook />, url: "https://www.facebook.com/PepsiIndia" },
+    { icon: <FaYoutube />, url: "https://www.youtube.com/user/Pepsi" },
+    { icon: <FaInstagram />, url: "https://www.instagram.com/pepsi" },
+    { icon: <FaTwitter />, url: "https://twitter.com/pepsi" },
   ];
 
   return (
-    <div className=" w-11/12 mx-auto p-4 relative overflow-hidden" id="Contact">
-      <span className=" ch  text-[6vmax] font-bold lg:font-semibold absolute top-0 lg:top-[-6%] left-[10%] lg:left-32">
-        <span className="text-primary">Get</span> in Touch{" "}
-      </span>
-      <span className="ch2 text-[7vmax] font-bold lg:font-semibold absolute top-14 lg:top-14 left-[25%] lg:left-[38%]">
-        with <span className="text-secondary">Us</span>
-      </span>
+    <div className="w-full bg-black text-white py-20 px-8 relative overflow-hidden" id="Contact">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="ch text-6xl md:text-7xl font-bold mb-2">
+          <span className="text-primary">Get</span> in Touch
+        </h2>
+        <h3 className="ch2 text-5xl md:text-6xl font-bold mb-16">
+          with <span className="text-secondary">Us</span>
+        </h3>
 
-      <div className=" flex flex-col lg:flex-row justify-center gap-2 mt-36 md:mt-40 lg:mt-52 w-full p-4 ">
-        <div className="info w-full lg:w-2/5  flex flex-col items-center lg:items-start gap-6 mt-4 text-sm">
-          <p className="text-center lg:text-justify">
-            WE'RE OPEN TO TALK TO GOOD PEOPLE. JUST SAY HELLO AND WE'LL START A
-            PRODUCTIVE COOPERATION.
-          </p>
-          <div className="flex gap-2">
-            CALL US: +1 800 433 2652 <br />
-            SAY HI: SUPPORT@PEPSI.COM
-          </div>
-          <div className="flex  lg:ml-0">
-            {aarr.map((links, index) => {
-              return (
-                <span
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-16">
+          <div className="info w-full lg:w-2/5 space-y-8">
+            <p className="text-lg">
+              We're open to talk to good people. Just say hello and we'll start a productive cooperation.
+            </p>
+            <div className="space-y-2">
+              <p className="text-xl font-semibold">Call us: +1 800 433 2652</p>
+              <p className="text-xl font-semibold">Say hi: support@pepsi.com</p>
+            </div>
+            <div ref={socialIconsRef} className="flex space-x-4">
+              {socialLinks.map((link, index) => (
+                <a
                   key={index}
-                  className=" flex items-center  justify-center w-12 h-12 rounded-full cursor-pointer hover:bg-black hover:scale-110 p-3"
+                  href={link.url}
+                  className="text-2xl hover:text-primary transition-colors duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <a href={links.url}>{links.icon}</a>
-                </span>
-              );
-            })}
+                  {link.icon}
+                </a>
+              ))}
+            </div>
           </div>
+          <form ref={formRef} className="form w-full lg:w-1/2 space-y-6">
+            <div className="flex flex-col md:flex-row gap-6">
+              <input
+                type="text"
+                name="name"
+                placeholder="NAME"
+                className="w-full md:w-1/2 bg-white bg-opacity-10 rounded-full py-3 px-6 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="EMAIL"
+                className="w-full md:w-1/2 bg-white bg-opacity-10 rounded-full py-3 px-6 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
+              />
+            </div>
+            <textarea
+              name="message"
+              placeholder="MESSAGE"
+              rows="4"
+              className="w-full bg-white bg-opacity-10 rounded-3xl py-3 px-6 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
+            ></textarea>
+            <button
+              type="submit"
+              className="bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105"
+            >
+              Send Message
+            </button>
+          </form>
         </div>
-        <div className="form w-full lg:w-1/2 p-4 flex flex-col items-center lg:items-start gap-8">
-          <div className=" w-full flex flex-col lg:flex-row gap-4  lg:gap-0 justify-around">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="NAME"
-              className="p-4 rounded-full text-black lg:text-xl w-full lg:w-[45%] h-10 lg:h-14"
-            />
-            <input
-              type="text"
-              name="email"
-              id="email"
-              placeholder="E MAIL"
-              className="p-4 rounded-full text-black lg:text-xl w-full lg:w-[45%] h-10 lg:h-14"
-            />
-          </div>
-          <textarea
-            name=""
-            id="texarea"
-            placeholder="MESSAGE"
-            className="w-full lg:w-[95%] lg:h-36 lg:text-xl p-4 sm:ml-3 rounded-[2rem]"
-          ></textarea>
 
-          <button className="px-3 py-1 rounded-lg ml-3 cursor-pointer hover:bg-black bg-gray-900 hover:scale-110">
-            Send Message
-          </button>
-        </div>
-      </div>
-
-      <div className="w-full lg:w-[30%] flex justify-center lg:text-justify text-xs lg:absolute lg:bottom-10 lg:left-20 mt-10 p-2">
-        *All the fields are required. By sending the form you agree to the Terms
-        & Conditions and Privacy Policy.
+        <p className="mt-16 text-sm text-center lg:text-left text-gray-300">
+          *All fields are required. By sending the form you agree to our Terms & Conditions and Privacy Policy.
+        </p>
       </div>
     </div>
   );

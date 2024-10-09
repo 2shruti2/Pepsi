@@ -43,7 +43,7 @@ const Navbar = ({ logo }) => {
   return (
     <nav className="w-11/12 container mx-auto px-10 py-4 flex  relative select-none ">
       {/* logo */}
-      <div className="logo absolute lg:static top-4 left-0 w-[25%] lg:w-[10%] flex justify-center items-center ">
+      <div className="logo absolute lg:static top-4 left-0 w-[25%] lg:w-28 flex justify-center items-center ">
         <img
           src={logo}
           alt=""
@@ -73,9 +73,7 @@ const Navbar = ({ logo }) => {
 
       {/* menu  */}
       <div className=" w-[10%]  flex items-center fixed right-8 top-4 z-50">
-        {/* <button className="shop w-fit h-hit px-2 py-1 rounded-lg hidden lg:flex lg:text-base cursor-pointer hover:bg-black bg-gray-800  hover:scale-110">
-          Shop Now
-        </button> */}
+       
         <button
           onClick={() => {
             setSideBar(!sideBar);
